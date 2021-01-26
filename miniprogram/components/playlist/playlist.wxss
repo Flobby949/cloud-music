@@ -1,0 +1,35 @@
+/* components/playlist/playlist.wxss */
+.playlist-container{
+  width: 220rpx;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.playlist-img{
+  width: 100%;
+  height: 220rpx;
+  border-radius: 10rpx;
+}
+
+.playlist-playcount{
+  font-size: 24rpx;
+  color: #ffffff;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.15);
+  position: absolute;
+  right: 10rpx;
+  top: 4rpx;
+  padding-left: 26rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAE90lEQVR4Xu2bWagdRRCGv//BiMuDK25REI2ouCXgGiOuuCI+CEZRcYkaXEDjjoIJKMYtETRiXIOKieCTaFRcImrihsYNFRMRNMF9QVxQH36ppO/l3HNn5syZMxfP0SkY7rlMV3XVP9Vd1d3VYozJ9tbACcAEYDNg8/R36LeB71qeb9Pvt4GnJf0ylipqLITb3gM4DDgeOLjHPp4KIIAlkj7qUdYo9loBsH0qcCGwb92KJnmvA/MkPVKX/FoAsB1f+ZL0xevSrUjOE8BcSS/12llPANjeAZgBnN+rIhX57wLmSPqsIj+VAbB9AXBdmtSq9l8HX0ygsyTNqyKsEgC2HwTOqNJhC08o/mX6f9sagFwg6cxudeoKANsbAq8Bu3XZUfC8kJ4wepWkP1tl2F4XGA8EGBFB4tm/y34+DB5Jv5blKw2A7QOApWUFA88Ai4AXJQ196S7YwXaAcSgwFTiqC+bJkpaVaV8KANtbAl+VEQi8B9wuaUHJ9qWa2Y4hdzGwZykG2ErS153adgTA9jrAF0CAUER/ATOT8X906rjKe9vrJRCin3EdZITx20n6u6hdGQAWJhcskhMAnSvp2SqGdctj+0jgnjCwA+8iSSdXBsD2nJTgFMl4K9JdSb93a0gv7W2vD0QitHcHOZEwRa6SSbkeYPs84O4Owu+UdFEvhvTKa/uOlH4XiZouaX5Wg0wAUkh6E4hFTR49IOnsXg2og9/2/cBZBbLeB/ZpD73RPg+AyOvD/fNoqaQD61C+Lhm2XwUmF8ibIWlu+/tRANjeGIivv2OOsO+BKZI+qUv5OuTY3hl4Je01ZIlcmbzgp9aXWQBcA1xfoNQ0SeFyfUe2Y0jeV6DYtZJuyAUgff0PgG1yhDwv6Yi+s7xFIdvPAYfn6Lga2F3SsBeM8ADbJ6X0Nc/G4yTFDk3fku1jgScLFJwq6bGh9+0AFM2mD0s6vW8tH+kFDwGn5eg6Inq1AxCLlliRZdF+kt4YEABiSy62z7IoVqKxyFpDwwDYngK8nMO0XNKkQTB+SEfb7wATc3Q+SFJEjBEA3AhclcNwk6S8d32Ji+3ZwJU5ys2WdHU7ALHWjzV/Fk2StLwvLc1RynZ8/fCCLFomaU3S1DoEPk2HF+0MH0vadZCMbxkGcY6wS4buKyTt1A5AxMaNMhovlhShZeDIdoTsYzIU/1lSZLxrPSBtesSGRhYtlHTKwFm/1q5Hgbz9gHGxWTIEQGR+q3KMnC9p+oACEMv5WNZn0XhJq4cA2AvIm+RukXTFgAJwM3B5ju4TJb07BEAcbS3JaThT0qwBBSAObmL/MIsOiaO1BoA0CTYe0AyBZg5oJsEmCtQZ6iR1PHXqpj/bUUxVJ5UOg5U6bQBoPKAZAs0cUGnyyGFqJsEmCjRhsMkD6pxTgCYRKrshUgn4JhNsMsEmE2wywUqTR5MJZiMw1qlwVIStqPOLDUAUmCBpZevp8A/AJnWB0OcA/Chp07C1FYDFwNH/EwDiPuKaU+NWAIrO0brGpc89YPi8sxWA7dN1mC26tjaDoY8B+CZdq/l8hAekI7JpwL3/cQDOkTRcTZpVKltUVFAamz71gFHFHnnV4pcCt5a2djCGwGWSbmtXtejCRNzEiJL5SmXxfeQBUUYfpfJxs2UUFebrtjcATkwFh1F2FsWScXewI/2LAMSdwSiPi4qXeB6X9Fuewv8Af9toX4IBkHQAAAAASUVORK5CYII=) 
+  no-repeat 8rpx/22rpx 20rpx;
+}
+
+.playlist-name{
+  font-size: 26rpx;
+  line-height: 1.2;
+  padding: 4rpx 0 0 12rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -5,3 +5,10 @@
     <image src="{{ item.url }}" class="image" mode="scaleToFill"></image>
   </swiper-item>
 </swiper>
+
+<text class="title">推荐歌单</text>
+<view class="playlist-container">
+  <block wx:for="{{ playlist }}" wx:key="id">
+    <j-playlist playlist="{{ item }}"></j-playlist>
+  </block>
+</view>

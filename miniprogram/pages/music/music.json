@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "j-playlist":"/components/playlist/playlist"
+  },
   "navigationBarTitleText":"音乐"
 }
