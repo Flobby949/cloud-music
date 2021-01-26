@@ -12,3 +12,9 @@
     <j-playlist playlist="{{ item }}"></j-playlist>
   </block>
 </view>
+
+<view class="song">
+  <block wx:for="{{ song }}" wx:key="id">
+    <j-song song="{{ item }}"></j-song>
+  </block>
+</view>

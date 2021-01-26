@@ -1,0 +1,9 @@
+<!--components/song/song.wxml-->
+<view class="song-container">
+  <view class="song-id">{{ song.id }}</view>
+  <view class="song-info">
+    <view class="song-title">{{ song.title }}</view>
+    <view class="song-attribution">{{ song.attribution }}</view>
+  </view>
+  <image src="/images/more.png" class="more"></image>
+</view>

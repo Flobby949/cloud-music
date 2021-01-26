@@ -1,0 +1,42 @@
+/* components/song/song.wxss */
+.song-container{
+  display: flex;
+  height: 120rpx;
+  position: relative;
+}
+
+.song-id{
+  font-size: 48rpx;
+  color: #979090;
+  width: 80rpx;
+  height: 100%;
+  padding-top: 10rpx;
+  text-align: center;
+}
+
+.song-info{
+  display: flex;
+  flex-direction: column;
+  width: 600rpx;
+}
+
+.song-title{
+  color: #000;
+  font-size: 36rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+}
+
+.song-attribution{
+  color: #979090;
+  font-size: 24rpx;
+}
+
+.more{
+  position: absolute;
+  top: 20rpx;
+  right: 40rpx;
+  height: 50rpx;
+  width: 50rpx;
+}
+

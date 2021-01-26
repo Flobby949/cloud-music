@@ -9,8 +9,7 @@
 }
 
 .title{
-  margin-top: 10rpx;
-  margin-left: 10rpx;
+  margin: 20rpx 20rpx;
 }
 
 .playlist-container{
@@ -25,3 +24,6 @@
   display: flex;
 }
 
+.song{
+  margin-top: 20rpx;
+}
