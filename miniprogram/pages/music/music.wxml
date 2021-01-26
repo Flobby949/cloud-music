@@ -1,2 +1,7 @@
 <!--pages/music/music.wxml-->
-<text>音乐页面</text>
+<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true"
+ interval="3000" duration="1000" class="swiper">
+  <swiper-item wx:for="{{ imgUrls }}">
+    <image src="{{ item.url }}" class="image" mode="scaleToFill"></image>
+  </swiper-item>
+</swiper>
