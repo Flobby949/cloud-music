@@ -1,1 +1,8 @@
 /* components/card/card.wxss */
+.card{
+  width: 230rpx;
+  height: 230rpx;
+  background-color: aquamarine;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  border-radius: 10rpx;
+}

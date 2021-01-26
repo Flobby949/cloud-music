@@ -1,1 +1,5 @@
 /* pages/find/find.wxss */
+.my-card{
+  display: flex;
+  flex-wrap: wrap;
+}

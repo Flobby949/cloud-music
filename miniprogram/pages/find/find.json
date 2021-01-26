@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "my-card":"/components/card/card"
+  },
   "navigationBarTitleText":"发现"
 }

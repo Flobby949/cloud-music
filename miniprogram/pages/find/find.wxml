@@ -1,2 +1,7 @@
 <!--pages/find/find.wxml-->
-<text>发现页面</text>
+<text>发现</text>
+<view class="my-card">
+  <block  wx:for="{{ cards }}">
+    <my-card></my-card>
+  </block>
+</view>
