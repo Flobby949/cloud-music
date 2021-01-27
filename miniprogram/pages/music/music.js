@@ -31,44 +31,45 @@ Page({
         url:'http://p1.music.126.net/j0gp3gBDRRoqIXxAs0v7oA==/109951165664720877.jpg?imageView&quality=89'
       },
     ],
-    playlist:[
-      {
-        "id":"1001",
-        "playCount":"416161",
-        "name":"【翻唱】温柔不是我说",
-        "picUrl":"http://p2.music.126.net/PJylNWy_2-jI7LRgQ2Cm6w==/109951165649129522.jpg?param=140y140"
-      },
-      {
-        "id":"1002",
-        "playCount":"184141",
-        "name":"所有好运都会与你撞个满怀",
-        "picUrl":"http://p3.music.126.net/l_c3SARUoRRhNOLkhZJByA==/109951165077363897.jpg?param=140y140"
-      },
-      {
-        "id":"1003",
-        "playCount":"52215",
-        "name":"温柔说唱|全都是想悄悄捎给你的冬日心事",
-        "picUrl":"http://p3.music.126.net/JgcUgFBBEYc7JT6zLsDh3A==/109951165545300073.jpg?param=140y140"
-      },
-      {
-        "id":"1004",
-        "playCount":"41543",
-        "name":"难平的不是山海 是你的心",
-        "picUrl":"http://p4.music.126.net/NIVUVYyhkEWyLzMUOqxITg==/109951165414672298.jpg?param=140y140"
-      },
-      {
-        "id":"1005",
-        "playCount":"53135",
-        "name":"民谣|故事易写，岁月难唱",
-        "picUrl":"http://p3.music.126.net/u62ELJtw61CNPwO9Wapleg==/109951165432573790.jpg?param=140y140"
-      },
-      {
-        "id":"1006",
-        "playCount":"11515",
-        "name":"我以为长大会很快乐",
-        "picUrl":"http://p3.music.126.net/P0ZvFHL0Qw8aaiECpzCK2w==/109951165320851584.jpg?param=140y140"
-      },
-    ],
+    playlist:[],
+    // playlist:[
+    //   {
+    //     "id":"1001",
+    //     "playCount":"416161",
+    //     "name":"【翻唱】温柔不是我说",
+    //     "picUrl":"http://p2.music.126.net/PJylNWy_2-jI7LRgQ2Cm6w==/109951165649129522.jpg?param=140y140"
+    //   },
+    //   {
+    //     "id":"1002",
+    //     "playCount":"184141",
+    //     "name":"所有好运都会与你撞个满怀",
+    //     "picUrl":"http://p3.music.126.net/l_c3SARUoRRhNOLkhZJByA==/109951165077363897.jpg?param=140y140"
+    //   },
+    //   {
+    //     "id":"1003",
+    //     "playCount":"52215",
+    //     "name":"温柔说唱|全都是想悄悄捎给你的冬日心事",
+    //     "picUrl":"http://p3.music.126.net/JgcUgFBBEYc7JT6zLsDh3A==/109951165545300073.jpg?param=140y140"
+    //   },
+    //   {
+    //     "id":"1004",
+    //     "playCount":"41543",
+    //     "name":"难平的不是山海 是你的心",
+    //     "picUrl":"http://p4.music.126.net/NIVUVYyhkEWyLzMUOqxITg==/109951165414672298.jpg?param=140y140"
+    //   },
+    //   {
+    //     "id":"1005",
+    //     "playCount":"53135",
+    //     "name":"民谣|故事易写，岁月难唱",
+    //     "picUrl":"http://p3.music.126.net/u62ELJtw61CNPwO9Wapleg==/109951165432573790.jpg?param=140y140"
+    //   },
+    //   {
+    //     "id":"1006",
+    //     "playCount":"11515",
+    //     "name":"我以为长大会很快乐",
+    //     "picUrl":"http://p3.music.126.net/P0ZvFHL0Qw8aaiECpzCK2w==/109951165320851584.jpg?param=140y140"
+    //   },
+    // ],
     song:[
       {
         "id":"1",
@@ -97,7 +98,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getPlayList()
   },
 
   /**
@@ -147,5 +148,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  _getPlayList(){
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'playlist'
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        playlist: res.result
+      })
+      wx.hideLoading()
+    })
   }
 })

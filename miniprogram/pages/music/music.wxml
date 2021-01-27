@@ -14,7 +14,7 @@
 </view>
 
 <view class="song">
-  <block wx:for="{{ song }}" wx:key="id">
+  <block wx:for="{{ song }}" wx:key="_id">
     <j-song song="{{ item }}"></j-song>
   </block>
 </view>
