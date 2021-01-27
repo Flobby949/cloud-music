@@ -3,5 +3,6 @@
     "j-playlist":"/components/playlist/playlist",
     "j-song":"/components/song/song"
   },
-  "navigationBarTitleText":"音乐"
+  "navigationBarTitleText":"音乐",
+  "enablePullDownRefresh": true
 }
