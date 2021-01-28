@@ -40,3 +40,7 @@
   width: 50rpx;
 }
 
+/* 高亮 */
+.playing view,.playing text{
+  color: #d43c43;
+}

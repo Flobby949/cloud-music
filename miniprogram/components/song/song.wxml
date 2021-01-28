@@ -1,6 +1,7 @@
 <!--components/song/song.wxml-->
 <block wx:for="{{ musiclist }}" wx:key="id">
-  <view class="song-container">
+  <view class="song-container {{ item.id === playingId ? 'playing' : '' }}" 
+      bind:tap="onSelect" data-musicid="{{ item.id }}" data-index="{{ index }}">
     <view class="song-id">{{ index + 1 }}</view>
     <view class="song-info">
       <view class="song-title">{{ item.name }}</view>
