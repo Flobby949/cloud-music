@@ -13,8 +13,8 @@
   </block>
 </view>
 
-<view class="song">
+<!-- <view class="song">
   <block wx:for="{{ song }}" wx:key="_id">
     <j-song song="{{ item }}"></j-song>
   </block>
-</view>
+</view> -->

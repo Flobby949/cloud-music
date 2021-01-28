@@ -1,9 +1,11 @@
 <!--components/song/song.wxml-->
-<view class="song-container">
-  <view class="song-id">{{ song.id }}</view>
-  <view class="song-info">
-    <view class="song-title">{{ song.title }}</view>
-    <view class="song-attribution">{{ song.attribution }}</view>
+<block wx:for="{{ musiclist }}" wx:key="id">
+  <view class="song-container">
+    <view class="song-id">{{ index + 1 }}</view>
+    <view class="song-info">
+      <view class="song-title">{{ item.name }}</view>
+      <view class="song-attribution">{{ item.ar[0].name }} - {{ item.al.name }}</view>
+    </view>
+    <image src="/images/more.png" class="more"></image>
   </view>
-  <image src="/images/more.png" class="more"></image>
-</view>
+</block>

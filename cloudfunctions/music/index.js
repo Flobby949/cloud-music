@@ -10,7 +10,7 @@ cloud.init({
 })
 
 //定义基础URL
-const BASE_URL = 'http://jcx-cloud.cn1.utools.club/top'
+const BASE_URL = 'http://jcx-cloud.cn1.utools.club'
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -33,6 +33,15 @@ exports.main = async (event, context) => {
          console.log('结束music--playlist方法')
          return res
        })
+  }),
+
+  //歌单详情请求，传入歌单id，注意转成int类型
+  app.router('musiclist', async(ctx, next) => {
+    console.log('######' + event.playlistId)
+    const res = await axios.get(`${BASE_URL}/playlist/detail?id=${parseInt(event.playlistId)}`)
+    console.log('#####' + res)
+    ctx.body = res.data
   })
+
   return app.serve()
 }

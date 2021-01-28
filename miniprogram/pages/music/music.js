@@ -34,28 +34,28 @@ Page({
       },
     ],
     playlist:[],
-    song:[
-      {
-        "id":"1",
-        "title":"天外来物",
-        "attribution":"薛之谦 - 天外来物",
-      },
-      {
-        "id":"2",
-        "title":"像风一样",
-        "attribution":"薛之谦 - 渡",
-      },
-      {
-        "id":"3",
-        "title":"演员",
-        "attribution":"薛之谦 - 绅士",
-      },
-      {
-        "id":"4",
-        "title":"动物世界",
-        "attribution":"薛之谦 - 渡",
-      },
-    ],
+    // song:[
+    //   {
+    //     "id":"1",
+    //     "title":"天外来物",
+    //     "attribution":"薛之谦 - 天外来物",
+    //   },
+    //   {
+    //     "id":"2",
+    //     "title":"像风一样",
+    //     "attribution":"薛之谦 - 渡",
+    //   },
+    //   {
+    //     "id":"3",
+    //     "title":"演员",
+    //     "attribution":"薛之谦 - 绅士",
+    //   },
+    //   {
+    //     "id":"4",
+    //     "title":"动物世界",
+    //     "attribution":"薛之谦 - 渡",
+    //   },
+    // ],
   },
 
   /**
