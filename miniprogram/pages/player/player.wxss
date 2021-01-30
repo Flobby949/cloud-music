@@ -50,6 +50,11 @@ player-mask{
   transform: rotate(-25deg);
   /* 旋转中心 */
   transform-origin: 24rpx 24rpx;
+  transition: transform 0.8s ease;
+}
+
+.playing.player-disc::after{
+  transform: rotate(0deg);
 }
 
 .player-img{
@@ -63,9 +68,26 @@ player-mask{
   margin-left: -184rpx;
 }
 
+.zhuan{
+  animation: disc 12s linear infinite;
+          /* 名字 时长 动画效果 持续时间 */
+}
+@keyframes disc{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.ting{
+  animation-play-state: paused;
+}
+
 .control {
   position: absolute;
-  bottom: 8%;
+  bottom: 9%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -80,7 +102,7 @@ player-mask{
   font-size: 80rpx;
 }
 
-.icon-bofang, .icon-zanting{
+.icon-bofang,.icon-zanting{
   font-size: 120rpx;
-  margin: 0 50rpx;
+  margin: 0 80rpx;
 }
