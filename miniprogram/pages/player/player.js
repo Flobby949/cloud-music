@@ -1,7 +1,8 @@
 // pages/player/player.js
 let musiclist = []
-//当前播放歌曲
+// 当前播放歌曲
 let playingIndex = 0
+const BackgroundAudioManager = wx.getBackgroundAudioManager()
 Page({
   /**
    * 页面的初始数据
@@ -21,11 +22,14 @@ Page({
     this._loadMusicDetail(options.musicId)
   },
   togglePlaying(){
-    console.log('click')
+    if(this.data.isPlaying){
+      BackgroundAudioManager.pause()
+    }else{
+      BackgroundAudioManager.play()
+    }
     this.setData({
       isPlaying: !this.data.isPlaying
     })
-    console.log(this.data.isPlaying)
   },
   _loadMusicDetail(musicId){
     let music = musiclist[playingIndex]
@@ -49,12 +53,39 @@ Page({
         wx.showToast({
           title: '没有权限播放',
         })
+        BackgroundAudioManager.pause()
+        this.setData({
+          isPlaying: false
+        })
         return
       }
+      BackgroundAudioManager.src = url
+      BackgroundAudioManager.title = music.name
+      BackgroundAudioManager.coverImgUrl = music.al.picUrl
+      BackgroundAudioManager.singer = music.ar[0].name
       this.setData({
         isPlaying: true
       })
+      wx.hideLoading()
     })
+  },
+  onPrev(){
+    console.log('当前' + playingIndex)
+    playingIndex--
+    console.log('上一首' + playingIndex)
+    if(playingIndex === -1){
+      playingIndex = musiclist.length - 1
+    }
+    console.log(musiclist[playingIndex])
+    this._loadMusicDetail(musiclist[playingIndex].id)
+  },
+  onNext(){
+    playingIndex++
+    if(playingIndex === musiclist.length){
+      playingIndex = 0
+    }
+    console.log(musiclist[playingIndex])
+    this._loadMusicDetail(musiclist[playingIndex].id)
   },
 
   /**
