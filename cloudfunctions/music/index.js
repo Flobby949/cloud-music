@@ -49,5 +49,11 @@ exports.main = async (event, context) => {
     ctx.body = res.data
   })
 
+  // 根据歌曲id获取歌曲详细信息
+  app.router('musicInfo', async(ctx, next) => {
+    const res = await axios.get(`${BASE_URL}/song/detail?ids=${event.musicId}`)
+    ctx.body = res.data
+  })
+
   return app.serve()
 }

@@ -8,10 +8,26 @@
     <image class="player-img zhuan {{ isPlaying?'':'ting'}}" src="{{ picUrl }}"></image>
   </view>
 
+  <view class="music-info">{{ singerName }} - {{ album }}</view>
+
+  <view class="button-bar">
+    <text class="iconfont {{isLike?'icon-xihuan-active':'icon-xihuan'}}"></text>
+    <text class="iconfont icon-xiazai"></text>
+    <text class="iconfont icon-pinglun"></text>
+    <text class="comment">{{ commentNumber }}</text>
+    <text class="iconfont icon-gengduo"></text>
+  </view>
+
+  <view class="bar">
+    <text class="currentTime">{{ currentTime }}</text>
+    <slider max="{{ progressBarMax }}" min="0" value="{{ progressBarValue }}" bindchange="seekTime" class="progress-bar"
+      block-color="#d43c43" backgroundColor="#000000" activeColor="#d43c43" block-size="12"></slider>
+    <text class="totalTime">{{ totalTime }}</text>
+  </view>
+
   <view class="control">
     <text class="iconfont icon-shangyishou" bind:tap="onPrev"></text>
     <text class="iconfont {{ isPlaying?'icon-zanting':'icon-bofang'}}" bind:tap="togglePlaying"></text>
     <text class="iconfont icon-xiayishou" bind:tap="onNext"></text>
   </view>
-
 </view>

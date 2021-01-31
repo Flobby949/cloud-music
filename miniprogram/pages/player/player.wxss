@@ -10,14 +10,14 @@
   z-index: -1;
 }
 
-player-mask{
+.player-mask{
+  background-color: rgb(189, 189, 189);
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -2;
-  background-color: #222;
 }
 
 .player-info{
@@ -105,4 +105,57 @@ player-mask{
 .icon-bofang,.icon-zanting{
   font-size: 120rpx;
   margin: 0 80rpx;
+}
+
+.button-bar{
+  position: relative;
+  display: flex;
+  top: 69%;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-bar .iconfont{
+  margin: 0 30rpx;
+  font-size: 55rpx;
+}
+
+.icon-xihuan-active{
+  color: rgb(197, 75, 75);
+}
+
+.comment{
+  position: absolute;
+  top: -19rpx;
+  right: 270rpx;
+  font-size: 20rpx;
+}
+
+.bar{
+  height: 100rpx;
+  width: 100%;
+  position: relative;
+  top: 70%;
+  display: flex;
+}
+
+.currentTime{
+  position: absolute;
+  top: 16rpx;
+  left: 35rpx;
+  color: #474747;
+}
+
+.totalTime{
+  position: absolute;
+  top: 14rpx;
+  right: 30rpx;
+  color: #474747;
+}
+
+.progress-bar{
+  position: absolute;
+  left: 50%;
+  margin-left: -225rpx;
+  width: 450rpx;
 }

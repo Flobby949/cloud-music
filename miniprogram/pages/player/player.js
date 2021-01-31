@@ -9,7 +9,15 @@ Page({
    */
   data: {
     picUrl: '',
-    isPlaying: false
+    isPlaying: false,
+    totalTime: '04:33',
+    currentTime: '00:50',
+    progressBarValue: 50,
+    progressBarMax: 100,
+    isLike: true,
+    commentNumber: 132,
+    singerName: '',
+    album: '',
   },
 
   /**
@@ -20,6 +28,7 @@ Page({
     playingIndex = options.index
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
+    this._autoPlay()
   },
   togglePlaying(){
     if(this.data.isPlaying){
@@ -66,7 +75,7 @@ Page({
       this.setData({
         isPlaying: true
       })
-      wx.hideLoading()
+      // wx.hideLoading()
     })
   },
   onPrev(){
@@ -87,6 +96,20 @@ Page({
     console.log(musiclist[playingIndex])
     this._loadMusicDetail(musiclist[playingIndex].id)
   },
+  _autoPlay(){
+    BackgroundAudioManager.onEnded((res) => {
+      this.onNext()
+      console.log('lalala' + playingIndex)
+    })
+  },
+
+  seekTime(time){
+    
+  },
+
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
