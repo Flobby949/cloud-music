@@ -10,10 +10,10 @@ Page({
   data: {
     picUrl: '',
     isPlaying: false,
-    totalTime: '04:33',
-    currentTime: '00:50',
-    progressBarValue: 50,
-    progressBarMax: 100,
+    totalTime: '',
+    currentTime: '',
+    progressBarValue: '',
+    progressBarMax: '',
     isLike: true,
     commentNumber: 132,
     singerName: '',
@@ -30,6 +30,7 @@ Page({
     this._loadMusicDetail(options.musicId)
     this._autoPlay()
   },
+
   togglePlaying(){
     if(this.data.isPlaying){
       BackgroundAudioManager.pause()
@@ -40,7 +41,11 @@ Page({
       isPlaying: !this.data.isPlaying
     })
   },
+
   _loadMusicDetail(musicId){
+    wx.showLoading({
+      title: '加载中',
+    })
     let music = musiclist[playingIndex]
     console.log(music)
     wx.setNavigationBarTitle({
@@ -75,13 +80,15 @@ Page({
       this.setData({
         isPlaying: true
       })
-      // wx.hideLoading()
+      let that = this
+      setTimeout(function(){
+        that._showTime()
+      },500)
+      wx.hideLoading()
     })
   },
   onPrev(){
-    console.log('当前' + playingIndex)
     playingIndex--
-    console.log('上一首' + playingIndex)
     if(playingIndex === -1){
       playingIndex = musiclist.length - 1
     }
@@ -99,17 +106,61 @@ Page({
   _autoPlay(){
     BackgroundAudioManager.onEnded((res) => {
       this.onNext()
-      console.log('lalala' + playingIndex)
     })
   },
-
-  seekTime(time){
-    
+  seekTime(value){
+    console.log(value.detail.value)
+    let time = value.detail.value/1000
+    BackgroundAudioManager.seek(time)
+    this._currentTimeFormat(time)
   },
-
-
-
-
+  seeking(value){
+    let time = value.detail.value/1000
+    this._currentTimeFormat(time)
+  },
+  _totalTimeFormat(time){
+    wx.cloud.callFunction({
+      name: 'dataFormat',
+      data: {
+        time: time
+      }
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        totalTime: res.result
+      })
+    })
+  },
+  _currentTimeFormat(time){
+    wx.cloud.callFunction({
+      name: 'dataFormat',
+      data: {
+        time: time
+      }
+    }).then((res) => {
+      this.setData({
+        currentTime: res.result
+      })
+    })
+  },
+  _showTime(){
+    console.log(this.data.isPlaying)
+      if(this.data.isPlaying){
+        this._totalTimeFormat(BackgroundAudioManager.duration)
+        let that = this
+        setInterval(function(){
+          that._currentTimeFormat(BackgroundAudioManager.currentTime)
+        },10)
+        setInterval(function(){
+          const total = BackgroundAudioManager.duration
+          let current = BackgroundAudioManager.currentTime
+          that.setData({
+            progressBarValue: current*1000,
+            progressBarMax: total*1000
+          },1000)
+        })
+      }
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

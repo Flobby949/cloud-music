@@ -110,7 +110,7 @@
 .button-bar{
   position: relative;
   display: flex;
-  top: 69%;
+  top: 67%;
   justify-content: center;
   align-items: center;
 }
