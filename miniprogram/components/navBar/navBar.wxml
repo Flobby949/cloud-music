@@ -1,5 +1,9 @@
 <!--components/navBar/navBar.wxml-->
 <view class="navbar-container">
-  <text class="iconfont icon-fanhui"></text>
-  <view>aaaaaa</view>
+  <view class="left">
+    <slot name="left"></slot>
+  </view>
+  <view class="center">
+    <slot name="title"></slot>
+  </view>
 </view>

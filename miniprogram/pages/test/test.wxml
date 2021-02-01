@@ -1,3 +1,4 @@
 <!--pages/test/test.wxml-->
-<j-nav-bar></j-nav-bar>
+<j-nav-bar left='aaa'>
+</j-nav-bar>
 <text class="title">pages/test/test.wxml</text>

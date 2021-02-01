@@ -20,7 +20,7 @@
   </view>
 
   <view class="bar">
-    <j-progress-bar/>
+    <j-progress-bar bind:musicEnd='onNext'/>
     <!-- <text class="currentTime">{{ currentTime }}</text>
     <slider max="{{ progressBarMax }}" min="0" value="{{ progressBarValue }}" bindchanging="seeking" bindchange="seekTime" class="progress-bar"
       block-color="#d43c43" backgroundColor="#000000" activeColor="#d43c43" block-size="12"></slider>

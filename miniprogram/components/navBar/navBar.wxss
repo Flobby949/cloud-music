@@ -1,11 +1,4 @@
 /* components/navBar/navBar.wxss */
 .navbar-container{
-  position: relative;
-  
   margin: 200rpx;
-}
-
-.icon-fanhui{
-  font-size: 100rpx;
-  color: #000000;
 }
