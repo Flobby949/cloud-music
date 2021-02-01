@@ -1,4 +1,5 @@
 <!--pages/player/player.wxml-->
+
 <view wx:if="{{ picUrl }}" class="player-container" style="background:url({{ picUrl }}) center/cover no-repeat">
 </view>
 <view class="player-mask"></view>
@@ -11,7 +12,7 @@
   <view class="music-info">{{ singerName }} - {{ album }}</view>
 
   <view class="button-bar">
-    <text class="iconfont {{isLike?'icon-xihuan-active':'icon-xihuan'}}"></text>
+    <text class="iconfont {{isLike?'icon-xihuan-active':'icon-xihuan'}}" bind:tap='changeFavorite'></text>
     <text class="iconfont icon-xiazai"></text>
     <text class="iconfont icon-pinglun"></text>
     <text class="comment">{{ commentNumber }}</text>

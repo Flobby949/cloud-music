@@ -34,6 +34,7 @@
   height: 592rpx;
   background: url('https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/disc.png') no-repeat center/contain;
   position: absolute;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, 140rpx);
 }
@@ -43,18 +44,18 @@
   width: 192rpx;
   height: 274rpx;
   position: absolute;
-  top: -150rpx;
+  top: -120rpx;
   left: 266rpx;
-  background: url('https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/needle.png') no-repeat center/contain;
+  background: url('https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/zhen.png') no-repeat center/contain;
   /* 旋转便宜效果 */
-  transform: rotate(-25deg);
+  transform: rotate(-40deg);
   /* 旋转中心 */
   transform-origin: 24rpx 24rpx;
   transition: transform 0.8s ease;
 }
 
 .playing.player-disc::after{
-  transform: rotate(0deg);
+  transform: rotate(-5deg);
 }
 
 .player-img{
@@ -116,6 +117,7 @@
 }
 
 .button-bar .iconfont{
+  
   margin: 0 30rpx;
   font-size: 55rpx;
 }

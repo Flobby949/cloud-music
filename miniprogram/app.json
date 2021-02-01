@@ -11,11 +11,7 @@
     "audio"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#d43c33",
-    "navigationBarTitleText": "云音乐",
-    "navigationBarTextStyle": "white"
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#474747",

@@ -14,7 +14,7 @@ Page({
     currentTime: '',
     progressBarValue: '',
     progressBarMax: '',
-    isLike: true,
+    isLike: false,
     commentNumber: 132,
     singerName: '',
     album: '',
@@ -42,7 +42,7 @@ Page({
     })
   },
 
-  _loadMusicDetail(musicId){
+  _loadMusicDetail(musicId){ 
     wx.showLoading({
       title: '加载中',
     })
@@ -73,13 +73,13 @@ Page({
         })
         return
       }
+      this.setData({
+        isPlaying: true
+      })
       BackgroundAudioManager.src = url
       BackgroundAudioManager.title = music.name
       BackgroundAudioManager.coverImgUrl = music.al.picUrl
       BackgroundAudioManager.singer = music.ar[0].name
-      this.setData({
-        isPlaying: true
-      })
       let that = this
       setTimeout(function(){
         that._showTime()
@@ -88,6 +88,9 @@ Page({
     })
   },
   onPrev(){
+    this.setData({
+      isPlaying: false
+    })
     playingIndex--
     if(playingIndex === -1){
       playingIndex = musiclist.length - 1
@@ -96,6 +99,9 @@ Page({
     this._loadMusicDetail(musiclist[playingIndex].id)
   },
   onNext(){
+    this.setData({
+      isPlaying: false
+    })
     playingIndex++
     if(playingIndex === musiclist.length){
       playingIndex = 0
@@ -110,56 +116,60 @@ Page({
   },
   seekTime(value){
     console.log(value.detail.value)
-    let time = value.detail.value/1000
-    BackgroundAudioManager.seek(time)
+    let time = value.detail.value
     this._currentTimeFormat(time)
+    BackgroundAudioManager.seek(time)
   },
   seeking(value){
-    let time = value.detail.value/1000
+    let time = value.detail.value
     this._currentTimeFormat(time)
   },
   _totalTimeFormat(time){
-    wx.cloud.callFunction({
-      name: 'dataFormat',
-      data: {
-        time: time
-      }
-    }).then((res) => {
-      console.log(res)
-      this.setData({
-        totalTime: res.result
-      })
+    let total = this._timeFormat(time)
+    this.setData({
+      totalTime: total
     })
   },
   _currentTimeFormat(time){
-    wx.cloud.callFunction({
-      name: 'dataFormat',
-      data: {
-        time: time
-      }
-    }).then((res) => {
-      this.setData({
-        currentTime: res.result
-      })
+    let current = this._timeFormat(time)
+    this.setData({
+      currentTime: current
     })
   },
+  _timeFormat(time){
+    let sec = time%60
+    let min = (time-sec)/60
+    if(min < 10){
+      min = '0'+min
+    }
+    sec = parseInt(sec)
+    if(sec < 10){
+      sec = '0'+sec
+    }
+    return `${min}:${sec}`
+  },
   _showTime(){
-    console.log(this.data.isPlaying)
       if(this.data.isPlaying){
         this._totalTimeFormat(BackgroundAudioManager.duration)
         let that = this
         setInterval(function(){
           that._currentTimeFormat(BackgroundAudioManager.currentTime)
-        },10)
+        },500)
         setInterval(function(){
           const total = BackgroundAudioManager.duration
           let current = BackgroundAudioManager.currentTime
           that.setData({
-            progressBarValue: current*1000,
-            progressBarMax: total*1000
-          },1000)
+            progressBarValue: current,
+            progressBarMax: total
+          },500)
         })
       }
+  },
+  changeFavorite(){
+    this.setData({
+      isLike: !this.data.isLike
+    })
+    console.log(this.data.isLike)
   },
 
   /**

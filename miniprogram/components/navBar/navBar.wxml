@@ -1,0 +1,5 @@
+<!--components/navBar/navBar.wxml-->
+<view>
+  <text></text>
+  <view></view>
+</view>
