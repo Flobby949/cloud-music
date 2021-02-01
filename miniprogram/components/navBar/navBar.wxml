@@ -1,5 +1,5 @@
 <!--components/navBar/navBar.wxml-->
-<view>
-  <text></text>
-  <view></view>
+<view class="navbar-container">
+  <text class="iconfont icon-fanhui"></text>
+  <view>aaaaaa</view>
 </view>

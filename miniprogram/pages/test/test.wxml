@@ -1,2 +1,3 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<j-nav-bar></j-nav-bar>
+<text class="title">pages/test/test.wxml</text>

@@ -1,0 +1,11 @@
+<!--components/progressBar/progressBar.wxml-->
+<view class="container">
+  <text class="time">00:00</text>
+  <view class="control">
+    <movable-area class="area">
+      <movable-view class="view" direction="horizontal" damping="1000" x="100"/>
+    </movable-area>
+    <progress stroke-width="4" percent="25" backgroundColor="#969696" activeColor="#d43c43" ></progress>
+  </view>
+  <text class="time">04:00</text>
+</view>

@@ -80,10 +80,10 @@ Page({
       BackgroundAudioManager.title = music.name
       BackgroundAudioManager.coverImgUrl = music.al.picUrl
       BackgroundAudioManager.singer = music.ar[0].name
-      let that = this
-      setTimeout(function(){
-        that._showTime()
-      },500)
+      // let that = this
+      // setTimeout(function(){
+      //   that._showTime()
+      // },500)
       wx.hideLoading()
     })
   },
@@ -114,57 +114,57 @@ Page({
       this.onNext()
     })
   },
-  seekTime(value){
-    console.log(value.detail.value)
-    let time = value.detail.value
-    this._currentTimeFormat(time)
-    BackgroundAudioManager.seek(time)
-  },
-  seeking(value){
-    let time = value.detail.value
-    this._currentTimeFormat(time)
-  },
-  _totalTimeFormat(time){
-    let total = this._timeFormat(time)
-    this.setData({
-      totalTime: total
-    })
-  },
-  _currentTimeFormat(time){
-    let current = this._timeFormat(time)
-    this.setData({
-      currentTime: current
-    })
-  },
-  _timeFormat(time){
-    let sec = time%60
-    let min = (time-sec)/60
-    if(min < 10){
-      min = '0'+min
-    }
-    sec = parseInt(sec)
-    if(sec < 10){
-      sec = '0'+sec
-    }
-    return `${min}:${sec}`
-  },
-  _showTime(){
-      if(this.data.isPlaying){
-        this._totalTimeFormat(BackgroundAudioManager.duration)
-        let that = this
-        setInterval(function(){
-          that._currentTimeFormat(BackgroundAudioManager.currentTime)
-        },500)
-        setInterval(function(){
-          const total = BackgroundAudioManager.duration
-          let current = BackgroundAudioManager.currentTime
-          that.setData({
-            progressBarValue: current,
-            progressBarMax: total
-          },500)
-        })
-      }
-  },
+  // seekTime(value){
+  //   console.log(value.detail.value)
+  //   let time = value.detail.value
+  //   this._currentTimeFormat(time)
+  //   BackgroundAudioManager.seek(time)
+  // },
+  // seeking(value){
+  //   let time = value.detail.value
+  //   this._currentTimeFormat(time)
+  // },
+  // _totalTimeFormat(time){
+  //   let total = this._timeFormat(time)
+  //   this.setData({
+  //     totalTime: total
+  //   })
+  // },
+  // _currentTimeFormat(time){
+  //   let current = this._timeFormat(time)
+  //   this.setData({
+  //     currentTime: current
+  //   })
+  // },
+  // _timeFormat(time){
+  //   let sec = time%60
+  //   let min = (time-sec)/60
+  //   if(min < 10){
+  //     min = '0'+min
+  //   }
+  //   sec = parseInt(sec)
+  //   if(sec < 10){
+  //     sec = '0'+sec
+  //   }
+  //   return `${min}:${sec}`
+  // },
+  // _showTime(){
+  //     if(this.data.isPlaying){
+  //       this._totalTimeFormat(BackgroundAudioManager.duration)
+  //       let that = this
+  //       setInterval(function(){
+  //         that._currentTimeFormat(BackgroundAudioManager.currentTime)
+  //       },500)
+  //       setInterval(function(){
+  //         const total = BackgroundAudioManager.duration
+  //         let current = BackgroundAudioManager.currentTime
+  //         that.setData({
+  //           progressBarValue: current,
+  //           progressBarMax: total
+  //         },500)
+  //       })
+  //     }
+  // },
   changeFavorite(){
     this.setData({
       isLike: !this.data.isLike
