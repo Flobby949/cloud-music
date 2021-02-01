@@ -1,5 +1,9 @@
 <!--pages/find/find.wxml-->
-<text>发现</text>
+<j-nav-bar>
+  <view slot="title">
+    发现
+  </view>
+</j-nav-bar>
 <view class="my-card">
   <block  wx:for="{{ cards }}">
     <my-card></my-card>

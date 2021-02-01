@@ -41,6 +41,12 @@ Page({
       wx.hideLoading()
     })
   },
+  
+  goBack(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
 
   _setMusiclist(){
     wx.setStorageSync('musiclist', this.data.musiclist)

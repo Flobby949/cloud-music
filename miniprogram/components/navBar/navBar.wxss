@@ -1,4 +1,26 @@
 /* components/navBar/navBar.wxss */
 .navbar-container{
-  margin: 200rpx;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 100rpx;
+  margin-bottom: 50rpx;
+}
+
+.left{
+  font-size: 30rpx;
+  padding: 0 50rpx;
+  width: 40rpx;
+}
+
+.center{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 5rpx 5rpx 5rpx;
+}
+
+.right{
+  width: 140rpx;
 }

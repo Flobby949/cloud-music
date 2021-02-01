@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "j-nav-bar":"/components/navBar/navBar"
+  },
   "navigationBarTitleText":"我的"
 }

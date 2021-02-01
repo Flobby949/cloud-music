@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "j-playlist":"/components/playlist/playlist",
-    "j-song":"/components/song/song"
+    "j-song":"/components/song/song",
+    "j-nav-bar":"/components/navBar/navBar"
   },
   "navigationBarTitleText":"音乐",
   "enablePullDownRefresh": true

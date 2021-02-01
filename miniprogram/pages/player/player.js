@@ -16,6 +16,7 @@ Page({
     progressBarMax: '',
     isLike: false,
     commentNumber: 132,
+    songName: '',
     singerName: '',
     album: '',
   },
@@ -29,6 +30,31 @@ Page({
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
     this._autoPlay()
+  },
+
+  _setMusicInfo(musicId){
+    wx.cloud.callFunction({
+      name: 'music',
+      data: {
+        musicId,
+        $url: 'musicInfo'
+      }
+    }).then((res) => {
+      console.log(res.result.songs[0])
+      const info = res.result.songs[0]
+      this.setData({
+        songName: info.name,
+        singerName: info.ar[0].name,
+        album: info.al.name
+      })
+    })
+  },
+
+  goBack(){
+    console.log('back')
+    wx.navigateBack({
+      delta: 1,
+    })
   },
 
   togglePlaying(){
@@ -76,6 +102,7 @@ Page({
       this.setData({
         isPlaying: true
       })
+      this._setMusicInfo(musicId)
       BackgroundAudioManager.src = url
       BackgroundAudioManager.title = music.name
       BackgroundAudioManager.coverImgUrl = music.al.picUrl

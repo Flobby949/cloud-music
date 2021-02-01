@@ -1,4 +1,9 @@
 <!--pages/test/test.wxml-->
-<j-nav-bar left='aaa'>
+<j-nav-bar>
+  <text slot="left" class="iconfont icon-fanhui"></text>
+  <view slot="title">
+    <view class="songName">aaaaaaaa</view>
+    <view class="attribution">bbbbbbbbbbbbbbbbbb</view>
+  </view>
 </j-nav-bar>
 <text class="title">pages/test/test.wxml</text>

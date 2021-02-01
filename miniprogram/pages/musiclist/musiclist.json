@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "j-song":"/components/song/song"
+    "j-song":"/components/song/song",
+    "j-nav-bar":"/components/navBar/navBar"
   },
   "navigateBarTitleText": "歌曲"
 }

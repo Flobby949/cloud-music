@@ -1,5 +1,9 @@
 <!--pages/profile/profile.wxml-->
-<text>个人中心页面</text>
+<j-nav-bar>
+  <view slot="title">
+    个人中心页面
+  </view>
+</j-nav-bar>
   <!-- 上传图片 -->
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">

@@ -1,4 +1,10 @@
 <!--pages/music/music.wxml-->
+<j-nav-bar>
+  <view slot="title">
+    音乐
+  </view>
+</j-nav-bar>
+
 <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true"
  interval="3000" duration="1000" class="swiper">
   <swiper-item wx:for="{{ imgUrls }}">

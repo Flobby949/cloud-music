@@ -6,4 +6,5 @@
   <view class="center">
     <slot name="title"></slot>
   </view>
+  <view class="right"></view>
 </view>

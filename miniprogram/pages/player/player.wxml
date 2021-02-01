@@ -1,4 +1,11 @@
 <!--pages/player/player.wxml-->
+<j-nav-bar>
+  <text slot="left" class="iconfont icon-fanhui" bind:tap="goBack"></text>
+  <view slot="title">
+    <view class="song">{{ songName }}</view>
+    <view class="attribution">{{ singerName }} - {{ album }}</view>
+  </view>
+</j-nav-bar>
 
 <view wx:if="{{ picUrl }}" class="player-container" style="background:url({{ picUrl }}) center/cover no-repeat">
 </view>
