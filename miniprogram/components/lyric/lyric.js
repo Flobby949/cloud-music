@@ -11,17 +11,42 @@ Component({
     lyric: String
   },
 
+  observers: {
+    lyric(lrc) {
+      if(lrc === '暂无歌词'){
+        let _lyrics = []
+        _lyrics.push(lrc)
+        this.setData({
+              lyrics: _lyrics
+        })
+      }else{
+        this._parseLyric(lrc)
+      }
+      console.log(lrc)
+    }
+  },
+
   /**
    * 组件的初始数据
    */
   data: {
-
+    lyrics: [],
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    _parseLyric(lyricSrc){
+      let lines = lyricSrc.split('\n')
+      let _lyric = []
+      lines.forEach(element => {
+        const lrc = element.split(']')[1]
+        _lyric.push(lrc)
+      });
+      this.setData({
+        lyrics: _lyric
+      })
+    }
   }
 })

@@ -118,8 +118,26 @@ Page({
       //   that._showTime()
       // },500)
       wx.hideLoading()
+      wx.cloud.callFunction({
+        name: 'music',
+        data: {
+          musicId,
+          $url: 'lyric',
+        }
+      }).then((res) => {
+        let lyric = '暂无歌词'
+        const lrc = res.result.lrc
+        if(lrc){
+          lyric = lrc.lyric
+        }
+        this.setData({
+          lyric
+        })
+      })
+
     })
   },
+
   onPrev(){
     this.setData({
       isPlaying: false
