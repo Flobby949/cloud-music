@@ -12,11 +12,11 @@
 <view class="player-mask"></view>
 
 <view class="player-info">
-  <view class="player-disc {{isPlaying?'playing':''}}">
+  <view class="player-disc {{isPlaying?'playing':''}}" hidden="{{ isLyricShow }}" bind:tap="onLyricShow">
     <image class="player-img zhuan {{ isPlaying?'':'ting'}}" src="{{ picUrl }}"></image>
   </view>
 
-  <view class="music-info">{{ singerName }} - {{ album }}</view>
+  <j-lyric isLyricShow="{{ isLyricShow }}" lyric="{{ lyric }}" bind:tap="onLyricShow"></j-lyric>
 
   <view class="button-bar">
     <text class="iconfont {{isLike?'icon-xihuan-active':'icon-xihuan'}}" bind:tap='changeFavorite'></text>
@@ -33,8 +33,6 @@
       block-color="#d43c43" backgroundColor="#000000" activeColor="#d43c43" block-size="12"></slider>
     <text class="totalTime">{{ totalTime }}</text> -->
   </view>
-
- 
 
   <view class="control">
     <text class="iconfont icon-shangyishou" bind:tap="onPrev"></text>

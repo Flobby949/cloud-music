@@ -34,7 +34,7 @@
   height: 592rpx;
   background: url('https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/disc.png') no-repeat center/contain;
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, 140rpx);
 }
@@ -139,6 +139,15 @@
   bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.song{
+  font-size: 34rpx;
+  margin-bottom: 10rpx;
+}
+
+.attribution{
+  font-size: 24rpx;
 }
 
 /* .currentTime{

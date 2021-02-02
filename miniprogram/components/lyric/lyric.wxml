@@ -1,0 +1,4 @@
+<!--components/lyric/lyric.wxml-->
+<view class="container" hidden="{{ !isLyricShow }}">
+  {{ lyric }}
+</view>

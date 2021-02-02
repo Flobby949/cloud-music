@@ -1,0 +1,7 @@
+/* components/lyric/lyric.wxss */
+.container{
+  position: absolute;
+  top: 400rpx;
+  left: 200rpx;
+  color: #ffffff;
+}

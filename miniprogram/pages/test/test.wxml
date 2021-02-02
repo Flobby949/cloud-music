@@ -1,9 +1,17 @@
 <!--pages/test/test.wxml-->
-<j-nav-bar>
+<!-- <j-nav-bar>
   <text slot="left" class="iconfont icon-fanhui"></text>
-  <view slot="title">
-    <view class="songName">aaaaaaaa</view>
+  <view slot="title" class="info">
+    <text class="songName">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</text>
     <view class="attribution">bbbbbbbbbbbbbbbbbb</view>
   </view>
-</j-nav-bar>
+</j-nav-bar> -->
 <text class="title">pages/test/test.wxml</text>
+
+<view>
+    <view id="info">
+        <text id="songName" :animation="animation">
+            开始testtesttesttesttesttest到底
+        </text>
+    </view>
+</view>

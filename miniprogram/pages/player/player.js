@@ -12,13 +12,13 @@ Page({
     isPlaying: false,
     totalTime: '',
     currentTime: '',
-    progressBarValue: '',
-    progressBarMax: '',
     isLike: false,
     commentNumber: 132,
     songName: '',
     singerName: '',
     album: '',
+    isLyricShow: false,
+    lyric: '传给歌词组件的歌词',
   },
 
   /**
@@ -30,6 +30,12 @@ Page({
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
     this._autoPlay()
+  },
+
+  onLyricShow(){
+    this.setData({
+      isLyricShow: !this.data.isLyricShow
+    })
   },
 
   _setMusicInfo(musicId){

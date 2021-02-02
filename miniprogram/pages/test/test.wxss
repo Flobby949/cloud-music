@@ -1,4 +1,20 @@
 /* pages/test/test.wxss */
-.title{
-  
+.info{
+  font-weight: bold;
+    font-size: 40upx;
+    white-space: nowrap;
+    width:200upx;
+    height:80upx;
+    position: relative;  
+    overflow: hidden;
+    background-color: aquamarine;
+}
+
+.songName{
+  color: #000;
+  height:80upx;
+  display: flex;
+  align-items: center;
+  position: absolute;  
+  line-height: 1em;
 }
