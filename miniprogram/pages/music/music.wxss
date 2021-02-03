@@ -1,4 +1,9 @@
 /* pages/music/music.wxss */
+page{
+  background-color: rgb(210, 245, 252);
+  padding-top: 180rpx;
+}
+
 .swiper{
   height: 340rpx;
 }
@@ -26,4 +31,8 @@
 
 .song{
   margin-top: 20rpx;
+}
+
+.icon-mulu{
+  font-size: 50rpx;
 }

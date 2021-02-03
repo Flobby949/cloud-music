@@ -1,9 +1,7 @@
 <!--pages/musiclist/musiclist.wxml-->
-<j-nav-bar>
+<j-nav-bar class="nav-bar">
   <text slot="left" class="iconfont icon-fanhui" bind:tap="goBack"></text>
-  <view slot="title">
-    发现
-  </view>
+  <view slot="title">{{ isScorll ? listInfo.name : '歌单' }}</view>
 </j-nav-bar>
 
 <view wx:if="{{ listInfo.coverImgUrl }}" class="detail-container"
@@ -14,7 +12,21 @@
 <!-- 歌单信息 -->
 <view class="detail-info">
   <image src="{{ listInfo.coverImgUrl }}" class="detail-img"></image>
-  <view class="detail-name">{{ listInfo.name }}</view>
+  <view class="info">
+    <view class="detail-name">{{ listInfo.name }}</view>
+    <view class="userInfo">
+      <image class="avatar" src="https://flobby.oss-cn-shenzhen.aliyuncs.com/avatar/163848923.jpg"></image>
+      <view class="nickname">Flobby529 ></view>
+    </view>
+    <view class="edit">编辑简介 ></view>
+  </view>
+</view>
+
+<!-- 按钮栏 -->
+<view class="buttonBar">
+  <view class="iconfont {{ isFavourite? 'icon-chenggong':'icon-shoucang' }}" bind:tap="changeFav"> 收藏</view>
+  <view class="iconfont icon-pinglun"> 评论</view>
+  <view class="iconfont icon-fenxiang"> 分享</view>
 </view>
 
 <j-song musiclist="{{ musiclist }}" class="musiclist"></j-song>

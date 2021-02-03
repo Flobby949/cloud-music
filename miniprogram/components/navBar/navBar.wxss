@@ -1,10 +1,12 @@
 /* components/navBar/navBar.wxss */
 .navbar-container{
+  z-index: 999;
   display: flex;
+  position: fixed;
+  top: 3%;
+  height: 150rpx;
   width: 100%;
   align-items: center;
-  margin-top: 100rpx;
-  margin-bottom: 50rpx;
 }
 
 .left{

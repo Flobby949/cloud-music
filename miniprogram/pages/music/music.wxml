@@ -1,8 +1,9 @@
 <!--pages/music/music.wxml-->
-<j-nav-bar>
-  <view slot="title">
-    音乐
+<j-nav-bar class="nav-bar">
+  <view slot="left">
+    <view class="iconfont icon-mulu"></view>
   </view>
+  <view slot="title">{{ isScorll ? isOnline ? nickname : '音乐' : '音乐' }}</view>
 </j-nav-bar>
 
 <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true"

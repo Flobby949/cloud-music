@@ -1,4 +1,5 @@
 // pages/musiclist/musiclist.js
+let scrollTop = 0
 Page({
 
   /**
@@ -9,6 +10,10 @@ Page({
     musiclist: [],
     // 歌单信息（封面图和歌单名称)
     listInfo: {},
+    isFavourite: false,
+    isScorll:false,
+    nickname: '',
+    avatar: '',
   },
 
   /**
@@ -41,6 +46,12 @@ Page({
       wx.hideLoading()
     })
   },
+
+  changeFav(){
+    this.setData({
+      isFavourite: !this.data.isFavourite
+    })
+  },
   
   goBack(){
     wx.navigateBack({
@@ -50,6 +61,31 @@ Page({
 
   _setMusiclist(){
     wx.setStorageSync('musiclist', this.data.musiclist)
+  },
+
+  _watchPageStatus(){
+    const query = wx.createSelectorQuery()
+    query.select('.nav-bar').boundingClientRect()
+    query.exec((rect) => {
+      scrollTop = rect[0].top
+    })
+  },
+
+  _changeScorllStatus(top){
+    if(top < -50){
+      this.setData({
+        isScorll: true
+      })
+    }else {
+      this.setData({
+        isScorll: false
+      })
+    }
+  },
+
+  onPageScroll: function() {
+    this._watchPageStatus()
+    this._changeScorllStatus(scrollTop)
   },
 
   /**

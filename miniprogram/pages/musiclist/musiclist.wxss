@@ -8,7 +8,7 @@
 .detail-mask{
   position: absolute;
   width: 100%;
-  height: 420rpx;
+  height: 560rpx;
   background-color: #333;
   top: 0;
   left: 0;
@@ -18,29 +18,84 @@
 .detail-info{
   display: flex;
   position: absolute;
-  top: 180rpx;
+  top:160rpx;
   left: 0;
-  width: 100%;
-  height: 320rpx;
   padding: 20rpx;
   box-sizing: border-box;
   align-items: center;
 }
 
+.info{
+  position: absolute;
+  top: 35rpx;
+  width: 100%;
+  left: 310rpx;
+}
+
 .detail-img{
-  width: 280rpx;
-  height: 280rpx;
-  margin-right: 24rpx;
-  border-radius: 6rpx;
+  width: 260rpx;
+  height: 260rpx;
+  margin: 10rpx 20rpx;
+  border-radius: 10rpx;
 }
 
 .detail-name{
   color: #ffffff;
-  font-size: 36rpx;
+  font-size: 30rpx;
   line-height: 1.5;
-  font-weight: 400;
+}
+
+.userInfo{
+  font-size: 24rpx;
+  color: #fff;
+  display: flex;
+}
+
+.avatar{
+  margin: 20rpx 15rpx;
+  height: 55rpx;
+  width: 55rpx;
+  border-radius: 50%;
+}
+
+.nickname{
+  margin: 30rpx 5rpx;
+}
+
+.edit{
+  margin-top: 40rpx;
+  margin-left: 15rpx;
+  font-size: 24rpx;
+  color: #fff;
 }
 
 .musiclist{
-  margin-top: 25rpx;
+  position: absolute;
+  top: 630rpx
+}
+
+.buttonBar{
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  background-color: #ffffff;
+  border-radius: 48rpx;
+  top: 515rpx;
+  height: 90rpx;
+  left: 50%;
+  width: 72%;
+  transform: translateX(-50%);
+  box-shadow: 0 2rpx 5rpx #d3d3d3;
+  align-items: center;
+  padding-left: 40rpx;
+}
+
+.buttonBar .iconfont{
+  margin: 0 20rpx;
+}
+
+.icon-pinglun {
+  border-left: 1rpx solid #969696;
+  border-right: 1rpx solid #969696;
+  padding: 0 40rpx;
 }

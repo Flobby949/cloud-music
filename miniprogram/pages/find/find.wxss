@@ -1,4 +1,9 @@
 /* pages/find/find.wxss */
+page{
+  background-color: rgb(210, 245, 252);
+  padding-top: 180rpx;
+}
+
 .my-card{
   display: flex;
   flex-wrap: wrap;

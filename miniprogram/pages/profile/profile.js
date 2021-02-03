@@ -1,7 +1,5 @@
 // pages/profile/profile.js
 
-const app = getApp()
-
 Page({
   data: {
     isOnline: false,
@@ -37,7 +35,8 @@ Page({
         wx.showToast({
           title: '登录成功'
         })
-      } else {
+        wx.setStorageSync('isOnline', this.data.isOnline)
+      } else{
         wx.showToast({
           icon: 'none',
           title: '登录失败'
@@ -78,6 +77,8 @@ Page({
         nickname: res.result.profile.nickname,
         avatar: res.result.profile.avatarUrl
       })
+      wx.setStorageSync('nickname', this.data.nickname)
+      wx.setStorageSync('avatar', this.data.avatar)
     })
   },
 
