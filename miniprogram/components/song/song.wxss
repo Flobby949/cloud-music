@@ -22,8 +22,8 @@
 
 .song-title{
   color: #000;
-  font-size: 36rpx;
-  height: 50rpx;
+  font-size: 32rpx;
+  height: 45rpx;
   margin-bottom: 10rpx;
 }
 

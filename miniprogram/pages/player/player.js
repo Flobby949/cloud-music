@@ -18,7 +18,7 @@ Page({
     singerName: '',
     album: '',
     isLyricShow: false,
-    lyric: '传给歌词组件的歌词',
+    lyric: '',
   },
 
   /**
@@ -223,6 +223,9 @@ Page({
     console.log(this.data.isLike)
   },
 
+
+
+  
   timeUpdate(event){
     this.selectComponent('.lyric').update(event.detail.currentTime)
   },

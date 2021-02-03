@@ -1,6 +1,6 @@
 <!--pages/player/player.wxml-->
 <j-nav-bar>
-  <text slot="left" class="iconfont icon-fanhui" bind:tap="goBack"></text>
+  <text slot="left" bind:tap="goBack" class="iconfont icon-fanhui"></text>
   <view slot="title">
     <view class="song">{{ songName }}</view>
     <view class="attribution">{{ singerName }} - {{ album }}</view>

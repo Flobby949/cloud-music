@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "j-nav-bar":"/components/navBar/navBar"
+    "j-nav-bar":"/components/navBar/navBar",
+    "j-playlist":"/components/playlist/playlist"
   },
   "navigationBarTitleText":"我的"
 }

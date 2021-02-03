@@ -18,9 +18,6 @@ exports.main = async (event, context) => {
     event
   })
 
-  console.log('进入 music 方法')
-  console.log(event)
-
   //歌单列表请求，需要传入url，起始记录索引，请求的记录数，按照创建时间降序排列
   app.router('playlist', async(ctx, next) => {
     console.log('进入music--playlist方法')
@@ -37,9 +34,7 @@ exports.main = async (event, context) => {
 
   //歌单详情请求，传入歌单id，注意转成int类型
   app.router('musiclist', async(ctx, next) => {
-    console.log('######' + event.playlistId)
     const res = await axios.get(`${BASE_URL}/playlist/detail?id=${parseInt(event.playlistId)}`)
-    console.log('#####' + res)
     ctx.body = res.data
   }),
 

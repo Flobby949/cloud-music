@@ -4,12 +4,29 @@
     个人中心页面
   </view>
 </j-nav-bar>
-  <!-- 上传图片 -->
-  <view class="uploader">
+<!-- 上传图片 -->
+<!-- <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">
       <text>上传图片</text>
     </view>
     <view class="uploader-container" wx:if="{{imgUrl}}">
       <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
     </view>
+  </view> -->
+
+<view bind:tap="login" wx:if="{{ !isOnline }}">
+  登录
+</view>
+
+<view class="container" wx:if="{{ isOnline }}">
+  <image src="{{ avatar }}" class="avatar"></image>
+  <view>
+    {{ nickname }}
   </view>
+</view>
+
+<view class="playlist-container">
+  <block wx:for="{{ playlist }}" wx:key="id">
+    <j-playlist playlist="{{ item }}"></j-playlist>
+  </block>
+</view>

@@ -101,9 +101,7 @@ Page({
     })
     wx.cloud.callFunction({
       name: 'music',
-      // name: 'tcbRouter',
       data: {
-        // $url: 'music',
         $url: 'playlist',
         start: this.data.playlist.length,
         count: MAX_LIMIT
