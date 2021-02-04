@@ -3,10 +3,12 @@
   z-index: 999;
   display: flex;
   position: fixed;
-  top: 3%;
-  height: 150rpx;
+  top: 0;
+  padding-top: 50rpx;
+  height: 135rpx;
   width: 100%;
   align-items: center;
+  background:linear-gradient(rgba(161, 199, 223, 0.836),rgba(255, 255, 255, 0.507));
 }
 
 .left{

@@ -36,3 +36,9 @@ page{
 .icon-mulu{
   font-size: 50rpx;
 }
+
+.nav-title{
+  position: absolute;
+  left: 300rpx;
+}
+

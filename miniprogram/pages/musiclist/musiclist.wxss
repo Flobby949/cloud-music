@@ -1,11 +1,11 @@
 /* pages/musiclist/musiclist.wxss */
-.detail-container{
+.detail-container {
   height: 320rpx;
   filter: blur(40rpx);
   opacity: 0.4;
 }
 
-.detail-mask{
+.detail-mask {
   position: absolute;
   width: 100%;
   height: 560rpx;
@@ -15,66 +15,71 @@
   z-index: -1;
 }
 
-.detail-info{
+.detail-info {
   display: flex;
   position: absolute;
-  top:160rpx;
+  top: 160rpx;
   left: 0;
   padding: 20rpx;
   box-sizing: border-box;
   align-items: center;
 }
 
-.info{
+.info {
   position: absolute;
   top: 35rpx;
   width: 100%;
   left: 310rpx;
 }
 
-.detail-img{
+.detail-img {
   width: 260rpx;
   height: 260rpx;
   margin: 10rpx 20rpx;
   border-radius: 10rpx;
 }
 
-.detail-name{
+.detail-name {
   color: #ffffff;
   font-size: 30rpx;
   line-height: 1.5;
 }
 
-.userInfo{
+.userInfo {
   font-size: 24rpx;
   color: #fff;
   display: flex;
 }
 
-.avatar{
+.avatar {
   margin: 20rpx 15rpx;
   height: 55rpx;
   width: 55rpx;
   border-radius: 50%;
 }
 
-.nickname{
+.nickname {
   margin: 30rpx 5rpx;
 }
 
-.edit{
+.edit {
   margin-top: 40rpx;
   margin-left: 15rpx;
   font-size: 24rpx;
   color: #fff;
 }
 
-.musiclist{
+.musiclist {
   position: absolute;
   top: 630rpx
 }
 
-.buttonBar{
+.musiclist2 {
+  position: absolute;
+  top: 2000rpx
+}
+
+.buttonBar {
   position: absolute;
   display: flex;
   z-index: 10;
@@ -90,7 +95,7 @@
   padding-left: 40rpx;
 }
 
-.buttonBar .iconfont{
+.buttonBar .iconfont {
   margin: 0 20rpx;
 }
 
@@ -98,4 +103,10 @@
   border-left: 1rpx solid #969696;
   border-right: 1rpx solid #969696;
   padding: 0 40rpx;
+}
+
+.nav-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

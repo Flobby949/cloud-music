@@ -3,5 +3,6 @@
     "j-progress-bar":"/components/progressBar/progressBar",
     "j-nav-bar":"/components/navBar/navBar",
     "j-lyric":"/components/lyric/lyric"
-  }
+  },
+  "disableScroll": true
 }

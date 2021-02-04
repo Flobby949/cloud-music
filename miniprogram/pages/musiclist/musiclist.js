@@ -14,6 +14,8 @@ Page({
     isScorll:false,
     nickname: '',
     avatar: '',
+    op: '',
+    opfix: '0',
   },
 
   /**
@@ -67,20 +69,41 @@ Page({
     const query = wx.createSelectorQuery()
     query.select('.nav-bar').boundingClientRect()
     query.exec((rect) => {
+      console.log(rect[0].top)
       scrollTop = rect[0].top
     })
   },
 
   _changeScorllStatus(top){
-    if(top < -50){
-      this.setData({
-        isScorll: true
-      })
-    }else {
-      this.setData({
-        isScorll: false
-      })
+    let opop = 1
+    let opopfix = 0
+    if(top >= -10){
+      opop = 1
+      opopfix = 0
     }
+    else if(top > -50){
+      console.log('0')
+      opop = 0.7
+      opopfix = 0.3
+    }
+    else if(top > -100){
+      console.log('-50')
+      opop = 0.5
+      opopfix = 0.5
+    }
+    else if(top > -150){
+      console.log('-100')
+      opop = 0.3
+      opopfix = 0.7
+    }
+    else if(top < -150){
+      opop = 0
+      opopfix = 1
+    }
+    this.setData({
+      op:opop,
+      opfix:opopfix
+    })
   },
 
   onPageScroll: function() {

@@ -1,11 +1,12 @@
 <!--pages/musiclist/musiclist.wxml-->
 <j-nav-bar class="nav-bar">
   <text slot="left" class="iconfont icon-fanhui" bind:tap="goBack"></text>
-  <view slot="title">{{ isScorll ? listInfo.name : '歌单' }}</view>
+  <view slot="title" style="opacity:{{op}};">歌单</view>
+  <view slot="title" class="nav-title" style="opacity:{{opfix}};">{{ listInfo.name }}</view>
 </j-nav-bar>
 
 <view wx:if="{{ listInfo.coverImgUrl }}" class="detail-container"
-      style='background: url({{ listInfo.coverImgUrl }}) no-repeat top/cover'>
+  style='background: url({{ listInfo.coverImgUrl }}) no-repeat top/cover'>
 </view>
 <!-- 遮罩层 -->
 <view class="detail-mask"></view>
@@ -30,3 +31,4 @@
 </view>
 
 <j-song musiclist="{{ musiclist }}" class="musiclist"></j-song>
+<j-song musiclist="{{ musiclist }}" class="musiclist2"></j-song>
