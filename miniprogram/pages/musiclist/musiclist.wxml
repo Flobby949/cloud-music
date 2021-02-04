@@ -1,9 +1,22 @@
 <!--pages/musiclist/musiclist.wxml-->
-<j-nav-bar class="nav-bar">
+<!-- <j-nav-bar class="nav-bar">
   <text slot="left" class="iconfont icon-fanhui" bind:tap="goBack"></text>
   <view slot="title" style="opacity:{{op}};">歌单</view>
-  <view slot="title" class="nav-title" style="opacity:{{opfix}};">{{ listInfo.name }}</view>
-</j-nav-bar>
+  <view slot="title" class="nav-title" style="opacity:{{1-op}};">{{ listInfo.name }}</view>
+</j-nav-bar> -->
+
+<view class="header" style="padding-top:{{statusBarHeight + 44}}px;opacity:{{1-op}}">
+  <text class="iconfont icon-fanhui" bind:tap="goBack"></text>
+  <text class="title">{{title}}</text>
+</view>
+
+<view class="header" style="padding-top:{{statusBarHeight + 44}}px;opacity:{{op}}">
+  <view wx:if="{{ listInfo.coverImgUrl }}" class='blur-bg'
+    style='background: url({{ listInfo.coverImgUrl }}) no-repeat top/cover;z-index:11'></view>
+  <view class="mask" style="z-index:10"></view>
+  <text class="iconfont icon-fanhui" bind:tap="goBack"></text>
+  <text class="title ellipsis">{{title}}</text>
+</view>
 
 <view wx:if="{{ listInfo.coverImgUrl }}" class="detail-container"
   style='background: url({{ listInfo.coverImgUrl }}) no-repeat top/cover'>
@@ -14,12 +27,12 @@
 <view class="detail-info">
   <image src="{{ listInfo.coverImgUrl }}" class="detail-img"></image>
   <view class="info">
-    <view class="detail-name">{{ listInfo.name }}</view>
+    <view class="detail-name ellipsis">{{ listInfo.name }}</view>
     <view class="userInfo">
-      <image class="avatar" src="https://flobby.oss-cn-shenzhen.aliyuncs.com/avatar/163848923.jpg"></image>
-      <view class="nickname">Flobby529 ></view>
+      <image class="avatar" src="{{ listInfo.avatarUrl }}"></image>
+      <view class="nickname">{{ listInfo.nickname }} ></view>
     </view>
-    <view class="edit">编辑简介 ></view>
+    <view class="description ellipsis">{{ listInfo.description }}</view>
   </view>
 </view>
 
@@ -30,5 +43,12 @@
   <view class="iconfont icon-fenxiang"> 分享</view>
 </view>
 
-<j-song musiclist="{{ musiclist }}" class="musiclist"></j-song>
-<j-song musiclist="{{ musiclist }}" class="musiclist2"></j-song>
+
+<scroll-view class="scroll">
+  <j-song musiclist="{{ musiclist }}" class="musiclist"></j-song>
+  <j-song musiclist="{{ musiclist }}" class="musiclist2"></j-song>
+</scroll-view>
+
+<view class="bottom">
+
+</view>

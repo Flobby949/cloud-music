@@ -1,6 +1,66 @@
-/* pages/musiclist/musiclist.wxss */
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding-bottom: 10rpx;
+}
+
+.title{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100rpx;
+  font-size: 32rpx;
+  color: #fff;
+  z-index: 1003;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon-fanhui{
+  position: absolute;
+  left: 20rpx;
+  top: 96rpx;
+  font-size: 32rpx;
+  color: #fff;
+  z-index: 1004;
+}
+
+.blur-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(40rpx);
+  opacity: 0.4;
+}
+
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+.ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 分割线 */
+
 .detail-container {
-  height: 320rpx;
+  height: 500rpx;
   filter: blur(40rpx);
   opacity: 0.4;
 }
@@ -30,7 +90,7 @@
   top: 35rpx;
   width: 100%;
   left: 310rpx;
-}
+} 
 
 .detail-img {
   width: 260rpx;
@@ -53,8 +113,8 @@
 
 .avatar {
   margin: 20rpx 15rpx;
-  height: 55rpx;
-  width: 55rpx;
+  height: 50rpx;
+  width: 50rpx;
   border-radius: 50%;
 }
 
@@ -62,21 +122,11 @@
   margin: 30rpx 5rpx;
 }
 
-.edit {
+.description {
   margin-top: 40rpx;
   margin-left: 15rpx;
   font-size: 24rpx;
   color: #fff;
-}
-
-.musiclist {
-  position: absolute;
-  top: 630rpx
-}
-
-.musiclist2 {
-  position: absolute;
-  top: 2000rpx
 }
 
 .buttonBar {
@@ -105,8 +155,17 @@
   padding: 0 40rpx;
 }
 
-.nav-title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.scroll{
+  box-sizing: border-box;
+  margin-top: 140rpx;
+  padding: 0 20rpx;
+}
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140rpx;
+  background-color: #f8f8f8;
 }

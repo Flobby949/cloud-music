@@ -8,7 +8,7 @@
   height: 135rpx;
   width: 100%;
   align-items: center;
-  background:linear-gradient(rgba(161, 199, 223, 0.836),rgba(255, 255, 255, 0.507));
+  background:linear-gradient(rgba(139, 139, 139, 0.555),rgba(139, 139, 139, 0.507));
 }
 
 .left{

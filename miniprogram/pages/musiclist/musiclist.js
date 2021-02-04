@@ -1,5 +1,6 @@
 // pages/musiclist/musiclist.js
 let scrollTop = 0
+const app = getApp()
 Page({
 
   /**
@@ -10,12 +11,11 @@ Page({
     musiclist: [],
     // 歌单信息（封面图和歌单名称)
     listInfo: {},
+    title: '歌单',
     isFavourite: false,
-    isScorll:false,
-    nickname: '',
-    avatar: '',
-    op: '',
-    opfix: '0',
+    description: '',
+    op: 0,
+    statusBarHeight: 0,
   },
 
   /**
@@ -24,6 +24,9 @@ Page({
   onLoad: function (options) {
     console.log('musiclist')
     console.log(options)
+    this.setData({
+      statusBarHeight: app.globalData.sysInfo.statusBarHeight,
+    })
     wx.showLoading({
       title: '加载中',
     })
@@ -42,8 +45,12 @@ Page({
         listInfo: {
           coverImgUrl: pl.coverImgUrl,
           name: pl.name,
+          avatarUrl: pl.creator.avatarUrl,
+          nickname: pl.creator.nickname,
+          description: pl.description
         }
       })
+      console.log(this.data.listInfo)
       this._setMusiclist()
       wx.hideLoading()
     })
@@ -65,50 +72,21 @@ Page({
     wx.setStorageSync('musiclist', this.data.musiclist)
   },
 
-  _watchPageStatus(){
-    const query = wx.createSelectorQuery()
-    query.select('.nav-bar').boundingClientRect()
-    query.exec((rect) => {
-      console.log(rect[0].top)
-      scrollTop = rect[0].top
-    })
-  },
-
-  _changeScorllStatus(top){
-    let opop = 1
-    let opopfix = 0
-    if(top >= -10){
-      opop = 1
-      opopfix = 0
+  onPageScroll: function(e) {
+    scrollTop = e.scrollTop
+    if( scrollTop > 44 ){
+      this.setData({
+        title: this.data.listInfo.name
+      })
+    }else {
+      this.setData({
+        title: '歌单'
+      })
     }
-    else if(top > -50){
-      console.log('0')
-      opop = 0.7
-      opopfix = 0.3
-    }
-    else if(top > -100){
-      console.log('-50')
-      opop = 0.5
-      opopfix = 0.5
-    }
-    else if(top > -150){
-      console.log('-100')
-      opop = 0.3
-      opopfix = 0.7
-    }
-    else if(top < -150){
-      opop = 0
-      opopfix = 1
-    }
+    let _op = (scrollTop / 100 > 1) ? 1 : scrollTop / 100
     this.setData({
-      op:opop,
-      opfix:opopfix
+      op : _op
     })
-  },
-
-  onPageScroll: function() {
-    this._watchPageStatus()
-    this._changeScorllStatus(scrollTop)
   },
 
   /**
