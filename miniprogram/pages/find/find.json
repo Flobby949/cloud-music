@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "my-card":"/components/card/card",
-    "j-nav-bar":"/components/navBar/navBar"
+    "j-nav-bar":"/components/navBar/navBar",
+    "j-search":"/components/search/search"
   },
   "navigationBarTitleText":"发现"
 }

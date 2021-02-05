@@ -1,6 +1,8 @@
 <!--components/navBar/navBar.wxml-->
-<view class="mask"></view>
-<view class="navbar-container">
+<view
+  class="navbar-container"
+  style="padding-top:{{ statusBarHeight + 12}}px;"
+>
   <view class="left">
     <slot name="left"></slot>
   </view>

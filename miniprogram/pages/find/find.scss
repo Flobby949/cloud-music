@@ -1,0 +1,22 @@
+/* pages/find/find.wxss */
+page{
+  background-color: rgb(210, 245, 252);
+  padding-top: 185rpx;
+}
+
+.my-card{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header{
+  position: relative;
+  display: flex;
+  margin-left: 20rpx;
+  .icon-bianji{
+    font-size: 60rpx;
+  }
+  .right{
+    margin-left: 25rpx;
+  }
+}

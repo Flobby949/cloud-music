@@ -3,8 +3,8 @@
     <view slot="left">
       <view class="iconfont icon-mulu"></view>
     </view>
-    <view slot="title" style="opacity:{{op}};">音乐</view>
-    <view slot="title" class="nav-title" style="opacity:{{opfix}};">{{isOnline ? nickname : '音乐'}}</view>
+    <view slot="title" style="opacity:{{1-op}};">音乐</view>
+    <view slot="title" class="nav-title" style="opacity:{{op}};">{{isOnline ? nickname : '音乐'}}</view>
   </j-nav-bar>
 
 <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"

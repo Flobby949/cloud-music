@@ -18,7 +18,7 @@
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
+    "compileHotReLoad": true,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
     "useApiHostProcess": true,
@@ -38,7 +38,7 @@
     "minifyWXSS": true
   },
   "appid": "wxd791822444dad921",
-  "projectname": "云音乐",
+  "projectname": "%E4%BA%91%E9%9F%B3%E4%B9%90",
   "libVersion": "2.14.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {

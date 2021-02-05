@@ -4,6 +4,17 @@
     发现
   </view>
 </j-nav-bar>
+
+<view class="header">
+  <view class="left" bind:tap="onPublish">
+    <i class="iconfont icon-bianji"></i>
+  </view>
+  <view class="right">
+    <j-search bind:search="onSearch"></j-search>
+  </view>
+</view>
+
+
 <view class="my-card">
   <block  wx:for="{{ cards }}">
     <my-card></my-card>

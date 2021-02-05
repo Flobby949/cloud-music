@@ -1,4 +1,5 @@
 // components/navBar/navBar.js
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -7,13 +8,22 @@ Component({
 
   },
   options: {
-    multipleSlots: true
+    multipleSlots: true,
   },
   /**
    * 组件的初始数据
    */
   data: {
+    statusBarHeight: '',
+  },
 
+  lifetimes: {
+    ready(){
+      this.setData({
+        statusBarHeight: app.globalData.sysInfo.statusBarHeight,
+      })
+      console.log(this.data.statusBarHeight)
+    }
   },
 
   /**

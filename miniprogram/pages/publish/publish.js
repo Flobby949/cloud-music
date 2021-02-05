@@ -1,33 +1,11 @@
-// pages/find/find.js
-let keyword = ''
+// pages/publish/publish.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cards:[
-      {},{},{},{},{},{}
-    ]
-  },
 
-  onSearch(event){
-    keyword = event.detail.keyword
-    console.log(keyword)
-  },
-  onPublish(){
-    wx.navigateTo({
-      url: '../publish/publish',
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
   },
 
   /**

@@ -4,15 +4,14 @@
   display: flex;
   position: fixed;
   top: 0;
-  padding-top: 50rpx;
-  height: 135rpx;
   width: 100%;
   align-items: center;
+  font-size: 40rpx;
+  padding-bottom: 10rpx;
   background:linear-gradient(rgba(139, 139, 139, 0.555),rgba(139, 139, 139, 0.507));
 }
 
 .left{
-  font-size: 30rpx;
   padding: 0 50rpx;
   width: 40rpx;
 }

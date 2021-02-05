@@ -38,8 +38,7 @@ Page({
       },
     ],
     playlist: [],
-    op: '',
-    opfix: '0',
+    op: 0,
   },
 
   /**
@@ -47,46 +46,6 @@ Page({
    */
   onLoad: function (options) {
     this._getPlayList()
-  },
-
-  _watchPageStatus(){
-    const query = wx.createSelectorQuery()
-    query.select('.nav-bar').boundingClientRect()
-    query.exec((rect) => {
-      scrollTop = rect[0].top
-    })
-  },
-
-  _changeScorllStatus(top){
-    let opop = 1
-    let opopfix = 0
-    if(top >= -5){
-      opop = 1
-      opopfix = 0
-    }
-    else if(top > -50){
-      console.log('0')
-      opop = 0.7
-      opopfix = 0.3
-    }
-    else if(top > -100){
-      console.log('-50')
-      opop = 0.5
-      opopfix = 0.5
-    }
-    else if(top > -150){
-      console.log('-100')
-      opop = 0.3
-      opopfix = 0.7
-    }
-    else if(top < -150){
-      opop = 0
-      opopfix = 1
-    }
-    this.setData({
-      op:opop,
-      opfix:opopfix
-    })
   },
 
   _getUserInfo() {
@@ -115,9 +74,12 @@ Page({
 
   },
 
-  onPageScroll: function() {
-    this._watchPageStatus()
-    this._changeScorllStatus(scrollTop)
+  onPageScroll: function(e) {
+    scrollTop = e.scrollTop
+    let _op = (scrollTop / 200 > 1) ? 1 : scrollTop / 200
+    this.setData({
+      op : _op
+    })
   },
 
   /**

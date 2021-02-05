@@ -1,7 +1,7 @@
 /* pages/music/music.wxss */
 page{
   background-color: rgb(210, 245, 252);
-  padding-top: 180rpx;
+  padding-top: 170rpx;
 }
 
 .swiper{
@@ -39,6 +39,7 @@ page{
 
 .nav-title{
   position: absolute;
-  left: 300rpx;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
