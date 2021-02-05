@@ -1,7 +1,10 @@
 <!--pages/profile/profile.wxml-->
 <j-nav-bar>
-  <view slot="title">
+  <view slot="title" style="opacity:{{ 1 - op }};">
     个人中心页面
+  </view>
+  <view slot="title" class="nav-title" style="opacity:{{op}};">
+    {{nickname}}
   </view>
 </j-nav-bar>
 <!-- 上传图片 -->
@@ -14,13 +17,22 @@
     </view>
   </view> -->
 
-<view bind:tap="login" wx:if="{{ !isOnline }}">
-  登录
+<view wx:if="{{ backgroundUrl }}" class="detail-container"
+  style='background: url({{ backgroundUrl }}) no-repeat top/cover'>
+</view>
+<!-- 遮罩层-->
+<view class="detail-mask"></view>
+
+<view class="container" wx:if="{{ !isOnline }}">
+  <image src="../../images/default.png" class="avatar" bind:tap="login"></image>
+  <view style="margin-top:15rpx; font-size:36rpx; letter-spacing:8rpx" bind:tap="login">
+    点击登录
+  </view>
 </view>
 
 <view class="container" wx:if="{{ isOnline }}">
   <image src="{{ avatar }}" class="avatar"></image>
-  <view>
+  <view style="margin-top:20rpx; font-size:36rpx;">
     {{ nickname }}
   </view>
 </view>

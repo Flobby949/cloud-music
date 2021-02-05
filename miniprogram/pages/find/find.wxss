@@ -18,10 +18,12 @@ page {
   display: -ms-flexbox;
   display: flex;
   margin-left: 20rpx;
+  margin-bottom: 20rpx;
 }
 
 .header .icon-bianji {
   font-size: 60rpx;
+  opacity: 0.5;
 }
 
 .header .right {

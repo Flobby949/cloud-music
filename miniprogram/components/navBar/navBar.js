@@ -22,7 +22,6 @@ Component({
       this.setData({
         statusBarHeight: app.globalData.sysInfo.statusBarHeight,
       })
-      console.log(this.data.statusBarHeight)
     }
   },
 

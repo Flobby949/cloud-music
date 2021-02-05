@@ -7,6 +7,8 @@ Page({
     nickname: '',
     avatar: '',
     playlist: [],
+    backgroundUrl: '',
+    op: 0,
   },
 
   onLoad: function () {
@@ -64,7 +66,6 @@ Page({
 
   // 获取用户信息
   _getUserInfo(userId){
-    console.log('getUserInfo')
     wx.cloud.callFunction({
       name: 'profile',
       data: {
@@ -75,13 +76,20 @@ Page({
       console.log(res.result)
       this.setData({
         nickname: res.result.profile.nickname,
-        avatar: res.result.profile.avatarUrl
+        avatar: res.result.profile.avatarUrl,
+        backgroundUrl: res.result.profile.backgroundUrl,
       })
       wx.setStorageSync('nickname', this.data.nickname)
-      wx.setStorageSync('avatar', this.data.avatar)
     })
   },
 
+  onPageScroll(e){
+    let scrollTop = e.scrollTop
+    let _op = (scrollTop / 250 > 1) ? 1 : scrollTop / 250
+    this.setData({
+      op : _op
+    })
+  }
 })
 
 
