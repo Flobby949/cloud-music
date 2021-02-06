@@ -14,9 +14,8 @@
   </view>
 </view>
 
-
-<view class="my-card">
-  <block  wx:for="{{ cards }}">
-    <my-card></my-card>
-  </block>
-</view>
+<scroll-view class="container" scroll-y>
+  <j-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
+    bind:loginfail="onLoginFail">
+  </j-login>
+</scroll-view>

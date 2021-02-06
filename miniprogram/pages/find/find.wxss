@@ -18,14 +18,18 @@ page {
   display: -ms-flexbox;
   display: flex;
   margin-left: 20rpx;
-  margin-bottom: 20rpx;
 }
 
 .header .icon-bianji {
   font-size: 60rpx;
-  opacity: 0.5;
 }
 
 .header .right {
   margin-left: 25rpx;
+}
+
+.container {
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  height: 100vh;
 }
