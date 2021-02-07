@@ -18,5 +18,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onGotUserInfo(e){
+      const userInfo = e.detail.userInfo
+      if (userInfo) {
+        this.setData({
+          modalShow: false
+        })
+        this.triggerEvent('loginsuccess',userInfo)
+      }else {
+        this.triggerEvent('loginfail')
+      }
+    }
   }
 })

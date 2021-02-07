@@ -6,9 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cards:[
-      {},{},{},{},{},{}
-    ]
+  },
+
+  onLoginSuccess(event) {
+    const detail = event.detail
+    console.log(detail.nickName)
+    wx.navigateTo({
+      url: '../publish/publish'
+    })
   },
 
   onSearch(event){
@@ -16,6 +21,7 @@ Page({
     console.log(keyword)
   },
   onPublish(){
+    let that = this
     wx.getSetting({
       success: (res) => {
         console.log('当前设置' + JSON.stringify(res))
@@ -23,7 +29,7 @@ Page({
           wx.getUserInfo({
             success: function(res){
               console.log(res)
-              this.onLoginSuccess({
+              that.onLoginSuccess({
                 detail: res.userInfo
               })
             }
@@ -38,15 +44,8 @@ Page({
     })
   },
 
-  onLoginSuccess(event) {
-    const detail = event.detail
-    console.log(detail.nickName)
-    wx.navigateTo({
-      url: '../publish/publish'
-    })
-  },
   onLoginFail(){
-    wx.wx.showModal({
+    wx.showModal({
       title: '授权用户才能发布',
       content: '',
     })
