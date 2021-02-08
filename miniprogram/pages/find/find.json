@@ -2,7 +2,8 @@
   "usingComponents": {
     "j-nav-bar":"/components/navBar/navBar",
     "j-search":"/components/search/search",
-    "j-login":"/components/login/login"
+    "j-login":"/components/login/login",
+    "j-blog-card":"/components/blog-card/blog-card"
   },
-  "navigationBarTitleText":"发现"
+  "enablePullDownRefresh": true
 }

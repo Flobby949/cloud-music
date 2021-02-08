@@ -1,6 +1,6 @@
 /* pages/find/find.wxss */
-page{
-  background-color: rgb(210, 245, 252);
+page {
+  background-color: #d2f5fc;
   padding-top: 185rpx;
 }
 
@@ -10,24 +10,26 @@ page{
   height: 100vh;
 }
 
-.my-card{
+.my-card {
   display: flex;
   flex-wrap: wrap;
 }
 
-.header{
+.header {
   position: relative;
   display: flex;
   margin-left: 20rpx;
-  .icon-bianji{
-    font-size: 60rpx;
-  }
-  .right{
-    margin-left: 25rpx;
-  }
 }
 
-.blog-panel{
+.header .icon-bianji {
+  font-size: 60rpx;
+}
+
+.header .right {
+  margin-left: 25rpx;
+}
+
+.blog-panel {
   margin-bottom: 20rpx;
   box-sizing: border-box;
 }

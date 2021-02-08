@@ -1,0 +1,89 @@
+/* components/blog-card/blog-card.wxss */
+@import "../../global.scss";
+
+.blog{
+  padding: $gap;
+  background-color: $bgColor
+}
+
+.top{
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: $imgSm;
+  height: $imgSm;
+  border-radius: 50%;
+  margin-right: $gap;
+}
+
+.infoContainer{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.blog-nickName{
+  font-size: $primarySize;
+  color: $primaryColor;
+}
+
+.blog-time{
+  font-size: $seconddarySize;
+  color: $seconddaryColor;
+}
+
+.icon-gengduo{
+  font-size: $primarySize;
+  text-align: center;
+}
+
+.blog-content {
+  margin: $gap 0;
+  color: $primaryColor;
+  font-size: $primarySize;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.blog-img {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  .img{
+    flex: 1;
+    max-width: 500rpx;
+    max-height: 500rpx;
+    margin-right: $gap/2;
+    margin-bottom: $gap;
+  }
+
+  .img-sec{
+    width: 330rpx;
+    height: 330rpx;
+    margin-right: 10rpx;
+    margin-bottom: $gap;
+  }
+
+  .img-other {
+    width: 231rpx;
+    height: 240rpx;
+    margin-right: 5rpx;
+    margin-bottom: $gap;
+  }
+  
+}
+
+.controlBar{
+  margin: 10rpx;
+  text-align: right;
+  
+  .iconfont{
+    font-size: 42rpx;
+    margin-right: 40rpx;
+    padding: 10rpx;
+  }
+}

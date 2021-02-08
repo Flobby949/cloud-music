@@ -1,2 +1,42 @@
 <!--components/blog-card/blog-card.wxml-->
-<text>components/blog-card/blog-card.wxml</text>
+<view class="blog">
+    <!-- 顶部区域 -->
+  <view class="top">
+    <!-- 头像 -->
+    <image class="avatar" src="{{blog.avatarUrl}}" />
+    <!-- 中间部分 -->
+    <view class="infoContainer">
+        <!-- 昵称 -->
+        <view class="blog-nickName">{{blog.nickName}}</view>
+        <!-- 时间 -->
+        <view class="blog-time">{{_createTime}}</view>
+    </view>
+    <!-- 右侧编辑按钮 -->
+    <i class="iconfont icon-gengduo"></i>
+  </view>
+
+  <!-- 内容区域 -->
+  <view class="blog-content">
+    <text>{{blog.content}}</text>
+  </view>
+
+  <!-- 图片区域 -->
+  <view class="blog-img">
+    <block wx:for="{{blog.imgs}}" wx:key="index">
+      <image
+        class="{{blog.imgs.length == 1 ? 'img' : blog.imgs.length == 2 ? 'img-sec' : blog.imgs.length == 4 ? 'img-sec' : 'img-other'}}"
+        src="{{item}}"
+        catch:tap="onPreviewImage"
+        data-imgsrc="{{item}}"
+        data-imgs="{{blog.imgs}}"
+        />
+    </block>
+  </view>
+  <!-- 底部区域 -->
+      <!-- 互动按钮 -->
+      <view class="controlBar">
+        <i class="iconfont icon-xihuan"></i>
+        <i class="iconfont icon-pinglun"></i>
+        <i class="iconfont icon-fenxiang"></i>
+      </view>
+</view>

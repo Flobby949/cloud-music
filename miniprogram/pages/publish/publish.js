@@ -23,6 +23,7 @@ Page({
     console.log(options)
     userInfo = options
   },
+  
   onInput(e){
     console.log(e.detail.value)
     let wordsNum = e.detail.value.length
@@ -79,6 +80,7 @@ Page({
           },
           // 失败处理
           fail: (err) => {
+            console.log(err)
             reject()
           }
         })
@@ -91,6 +93,7 @@ Page({
     // Promise.all的resolve回调执行是在所有的promise都回调结束
     Promise.all(promiseArr).then((res) => {
       // 操作数据库blog集合，执行新增
+      console.log(userInfo)
       db.collection('blog').add({
         data: {
           ...userInfo,  //使用延展操作符... 取得userinfo对象的所有属性（昵称，头像）
@@ -104,9 +107,10 @@ Page({
         wx.showToast({
           title: '发布成功',
         })
-        wx.navigateBack({
-          delta: 1,
-        })
+        wx.navigateBack()
+        const pages = getCurrentPages()
+        const prevPage = pages[pages.length - 2]
+        prevPage.onPullDownRefresh()
       })
     }).catch((err) => {
       wx.hideLoading()

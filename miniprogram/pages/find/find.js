@@ -6,13 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    modalShow: false,
+    blogList: [],
   },
 
   onLoginSuccess(event) {
     const detail = event.detail
-    console.log(detail.nickName)
+    console.log(detail)
     wx.navigateTo({
-      url: '../publish/publish'
+      url: `../publish/publish?nickName=${detail.nickName}&avatarUrl=${detail.avatarUrl}`
     })
   },
 
@@ -21,15 +23,14 @@ Page({
     console.log(keyword)
   },
   onPublish(){
-    let that = this
     wx.getSetting({
       success: (res) => {
         console.log('当前设置' + JSON.stringify(res))
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
-            success: function(res){
+            success: (res) => {
               console.log(res)
-              that.onLoginSuccess({
+              this.onLoginSuccess({
                 detail: res.userInfo
               })
             }
@@ -55,7 +56,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._loadBlogList()
   },
 
   /**
@@ -63,6 +64,28 @@ Page({
    */
   onReady: function () {
 
+  },
+
+  _loadBlogList(start = 0){
+    wx.showLoading({
+      title: '数据加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'blog',
+      data: {
+        start,
+        count: 10,
+        $url: 'list',
+      }
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        blogList: this.data.blogList.concat(res.result)
+      })
+      console.log(this.data.blogList)
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+    })
   },
 
   /**
@@ -90,7 +113,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      blogList: []
+    })
+    this._loadBlogList()
   },
 
   /**

@@ -14,8 +14,14 @@
   </view>
 </view>
 
-<scroll-view class="container" scroll-y>
+<view class="container">
+  <block wx:for="{{blogList}}" wx:key="_id">
+    <view class="blog-panel">
+      <j-blog-card blog="{{item}}" data-blogid="{{item.id}}" bind:tap="goComment" />
+    </view>
+  </block>
+</view>
+
   <j-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
     bind:loginfail="onLoginFail">
   </j-login>
-</scroll-view>
