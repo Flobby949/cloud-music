@@ -3,7 +3,7 @@
 
 .blog{
   padding: $gap;
-  background-color: $bgColor
+  background-color: $bgColor;
 }
 
 .top{
@@ -55,8 +55,8 @@
 
   .img{
     flex: 1;
-    max-width: 500rpx;
-    max-height: 500rpx;
+    width: 500rpx;
+    height: 500rpx;
     margin-right: $gap/2;
     margin-bottom: $gap;
   }
@@ -86,4 +86,11 @@
     margin-right: 40rpx;
     padding: 10rpx;
   }
+}
+
+.comment{
+  margin-top: 20rpx;
+  padding:10rpx 20rpx;
+  background-color: rgb(238, 238, 238);
+  border-radius: 10rpx;
 }

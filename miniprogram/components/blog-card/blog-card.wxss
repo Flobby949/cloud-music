@@ -99,3 +99,10 @@
   margin-right: 40rpx;
   padding: 10rpx;
 }
+
+.comment {
+  margin-top: 20rpx;
+  padding: 10rpx 20rpx;
+  background-color: #eeeeee;
+  border-radius: 10rpx;
+}

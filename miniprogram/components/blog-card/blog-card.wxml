@@ -39,4 +39,6 @@
         <i class="iconfont icon-pinglun"></i>
         <i class="iconfont icon-fenxiang"></i>
       </view>
+  <input type="text" placeholder="评论" class="comment" />
 </view>
+
