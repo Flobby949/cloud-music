@@ -34,11 +34,11 @@
   </view>
   <!-- 底部区域 -->
       <!-- 互动按钮 -->
-      <view class="controlBar">
+      <!-- <view class="controlBar">
         <i class="iconfont icon-xihuan"></i>
         <i class="iconfont icon-pinglun"></i>
         <i class="iconfont icon-fenxiang"></i>
       </view>
-  <input type="text" placeholder="评论" class="comment" />
+  <input type="text" placeholder="评论" class="comment" /> -->
 </view>
 

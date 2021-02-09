@@ -3,7 +3,8 @@
     "j-nav-bar":"/components/navBar/navBar",
     "j-search":"/components/search/search",
     "j-login":"/components/login/login",
-    "j-blog-card":"/components/blog-card/blog-card"
+    "j-blog-card":"/components/blog-card/blog-card",
+    "j-blog-ctrl":"/components/blog-ctrl/blog-ctrl"
   },
   "enablePullDownRefresh": true
 }

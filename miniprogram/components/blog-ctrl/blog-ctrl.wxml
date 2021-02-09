@@ -1,0 +1,25 @@
+<!--components/blog-ctrl/blog-ctrl.wxml-->
+<view class="ctrl">
+  <view class="ctrl-item" bind:tap="onComment">
+    <icon class="iconfont icon-pinglun"></icon>
+    <text class="item">评论</text>
+  </view>
+  <view class="ctrl-item">
+    <button open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}" class="share-btn">
+      <icon class="iconfont icon-fenxiang"></icon>
+      <text class="item">分享</text>
+    </button>
+  </view>
+</view>
+
+<!-- 使用授权登录组件 -->
+<j-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginsuccess" bind:loginfail="onLoginFail" />
+
+<!-- 底部弹框组件，向插槽传递写评论元素 -->
+<j-bottom-modal modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <textarea name="content" bindinput="onInput" class="comment" 
+    placeholder="写评论" value="{{content}}" fixed="true"></textarea>
+    <view class="send" bind:tap="onSend">发送</view>
+  </view>
+</j-bottom-modal>

@@ -21,6 +21,10 @@ Page({
   onSearch(event){
     keyword = event.detail.keyword
     console.log(keyword)
+    this.setData({
+      blogList: []
+    })
+    this._loadBlogList(0)
   },
   onPublish(){
     wx.getSetting({
@@ -73,6 +77,7 @@ Page({
     wx.cloud.callFunction({
       name: 'blog',
       data: {
+        keyword,
         start,
         count: 10,
         $url: 'list',

@@ -18,6 +18,7 @@
   <block wx:for="{{blogList}}" wx:key="_id">
     <view class="blog-panel">
       <j-blog-card blog="{{item}}" data-blogid="{{item.id}}" bind:tap="goComment" />
+      <j-blog-ctrl></j-blog-ctrl>
     </view>
   </block>
 </view>

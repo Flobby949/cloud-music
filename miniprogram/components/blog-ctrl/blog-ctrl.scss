@@ -1,0 +1,62 @@
+/* components/blog-ctrl/blog-ctrl.wxss */
+@import "..\\..\\global.scss";
+
+.ctrl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ctrl-item {
+        flex: 1;
+        height: 68rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.iconfont{
+    margin-right: $gap;
+    font-size: $primarySize;
+}
+
+.item {
+    margin-top: 10rpx;
+    font-size: $primarySize;
+    font-weight: 400;
+}
+
+.share-btn {
+    margin-top: $gap;
+    border: none;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid #ccc;
+
+    .item {
+        margin-top: 8rpx;
+        font-size: $primarySize;
+        font-weight: 400;
+    }
+}
+
+.comment {
+    width: 560rpx;
+    text-align: left;
+    padding: 20rpx;
+    font-size: 32rpx;
+}
+
+.send{
+    color: rgb(238, 238, 238);
+    display: block;
+    width: 180rpx;
+    height: $primarySize*2;
+    line-height: $primarySize*2;
+    background: #5f95a5;
+    font-size: $primarySize;
+    border-radius: $gap/2;
+    position: absolute;
+    right: $gap;
+    bottom: $gap;
+}
