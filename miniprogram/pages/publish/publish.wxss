@@ -1,4 +1,8 @@
 /* pages/publish/publish.wxss */
+page {
+  padding-top: 180rpx;
+}
+
 .container {
   padding: 20rpx;
 }

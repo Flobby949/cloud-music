@@ -1,0 +1,32 @@
+<!--pages/blog-detail/blog-detail.wxml-->
+<j-nav-bar>
+  <text slot="left" bind:tap="goBack" class="iconfont icon-fanhui"></text>
+  <view slot="title">详情</view>
+</j-nav-bar>
+
+<scroll-view>
+  <view class="card">
+    <j-blog-card blog="{{blog}}"></j-blog-card>
+  </view>
+  <view class="tab">
+    评论列表
+  </view>
+  <view class="list">
+    <block wx:for="{{commentList}}" wx:key="_id">
+      <view class="comment">
+        <view class="title">
+          <image class="avatar" src="{{item.avatarUrl}}" />
+          <text class="nickname">{{item.nickName}}</text>
+        </view>
+        <view class="content">
+          {{item.content}}
+        </view>
+        <view class="time">{{item.createTime}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<view class="ctrl">
+<j-blog-ctrl blogId="{{blog._id}}" bind:refreshCommentList="_getBlogDetail" />
+</view>

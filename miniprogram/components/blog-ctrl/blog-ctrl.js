@@ -82,15 +82,16 @@ Component({
         title: '评论中',
         mask: true
       })
-
+      console.log('id')
+      console.log(this.properties)
+      console.log('id')
       db.collection('blog-comment').add({
         data: {
-          ...userInfo,
           content,
           createTime: db.serverDate(),
           blogId: this.properties.blogId,
-          // nickName: userInfo.nickName,
-          // avatarUrl: userInfo.avatarUrl
+          nickName: userInfo.nickName,
+          avatarUrl: userInfo.avatarUrl
         }
       }).then((res) => {
         console.log(res)
@@ -102,6 +103,7 @@ Component({
           modalShow:false,
           content: ''
         })
+        this.triggerEvent('refreshCommentList')
       })
     },
   }

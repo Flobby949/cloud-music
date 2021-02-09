@@ -93,6 +93,12 @@ Page({
     })
   },
 
+  gotoDetail(e){
+    wx.navigateTo({
+      url: '../../pages/blog-detail/blog-detail?blogId='+e.target.dataset.blogid,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面显示
    */

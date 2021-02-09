@@ -1,13 +1,11 @@
 /* pages/find/find.wxss */
 page {
-  background-color: #d2f5fc;
+  background-color: #a8f1ff;
   padding-top: 185rpx;
 }
 
 .container {
-  margin-top: 10rpx;
   box-sizing: border-box;
-  height: 100vh;
 }
 
 .my-card {
@@ -19,6 +17,7 @@ page {
   position: relative;
   display: flex;
   margin-left: 20rpx;
+  margin-bottom: 20rpx;
 }
 
 .header .icon-bianji {

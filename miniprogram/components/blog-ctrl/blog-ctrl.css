@@ -1,8 +1,4 @@
 /* components/blog-ctrl/blog-ctrl.wxss */
-page {
-  background-color: #f8f8f8;
-}
-
 .ctrl {
   display: flex;
   align-items: center;
@@ -15,6 +11,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 20rpx;
 }
 
 .iconfont {

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "j-blog-card":"/components/blog-card/blog-card",
+    "j-blog-ctrl":"/components/blog-ctrl/blog-ctrl",
+    "j-nav-bar":"/components/navBar/navBar"
+  }
+}
