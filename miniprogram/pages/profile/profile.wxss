@@ -1,9 +1,9 @@
 page {
-  padding-top: 180rpx;
+  padding-top: 170rpx;
 }
 
 .header {
-  background-image: url("https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/lADPD3zUMzFiAdLNASzNAoA_640_300.jpg_720x720q90g.jpg");
+  background-image: url("https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/lADPD4d8rybY5RPNBUbNBDg_1080_1350.jpg_720x720q90g.jpg");
   background-size: cover;
   height: 480rpx;
   display: -webkit-box;
@@ -35,6 +35,38 @@ page {
 .nickname {
   font-size: 32rpx;
   margin-top: 20rpx;
+}
+
+.ctrl {
+  width: 100%;
+  margin: 20rpx 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ctrl .ctrl-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ctrl .ctrl-item .num {
+  margin-top: 20rpx;
+  color: #939393;
 }
 
 .nav {

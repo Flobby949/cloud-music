@@ -33,6 +33,17 @@
   <open-data type="userNickName" class="nickname"></open-data>
 </view>
 
+<view class="ctrl">
+  <view class="ctrl-item">
+    <view class="text">听歌数量</view>
+    <text class="num">{{songNum}}</text>
+  </view>
+  <view class="ctrl-item">
+    <view class="text">博客数量</view>
+    <text class="num">{{blogNum}}</text>
+  </view>
+</view>
+
 <view class="nav">
   <view class="nav-item">
     <navigator class="content" hover-class="none" url="/pages/play-history/play-history">
@@ -47,7 +58,7 @@
     </navigator>
   </view>
   <view class="nav-item">
-    <navigator class="content" bind:tap="onTapQrCode">
+    <navigator class="content" bind:tap="onTapQrCode" url="">
       <text class="text">小程序码</text>
       <icon class="iconfont icon-arrow-right"></icon>
     </navigator>

@@ -1,11 +1,11 @@
 @import "../../global.scss";
 
 page{
-  padding-top: 180rpx;
+  padding-top: 170rpx;
 }
 
 .header {
-  background-image: url('https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/lADPD3zUMzFiAdLNASzNAoA_640_300.jpg_720x720q90g.jpg');
+  background-image: url('https://flobby.oss-cn-shenzhen.aliyuncs.com/cloud-music/lADPD4d8rybY5RPNBUbNBDg_1080_1350.jpg_720x720q90g.jpg');
   background-size: cover;
   height: 480rpx;
   display: flex;
@@ -28,6 +28,25 @@ page{
 .nickname {
   font-size: $primarySize;
   margin-top: $gap;
+}
+
+.ctrl {
+  width: 100%;
+  margin: $gap 0;
+  display: flex;
+
+  .ctrl-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .num{
+      margin-top: $gap;
+      color: $seconddaryColor;
+    }
+  }
 }
 
 .nav {

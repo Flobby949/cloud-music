@@ -4,6 +4,5 @@
     "j-song":"/components/song/song",
     "j-nav-bar":"/components/navBar/navBar"
   },
-  "navigationBarTitleText":"音乐",
   "enablePullDownRefresh": true
 }

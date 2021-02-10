@@ -2,7 +2,8 @@
 
 Page({
   data: {
-
+    songNum: 0,
+    blogNum: 0
   },
 
   onLoad: function () {
