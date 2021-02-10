@@ -1,0 +1,4 @@
+/* pages/play-history/play-history.wxss */
+page{
+  padding-top: 180rpx;
+}

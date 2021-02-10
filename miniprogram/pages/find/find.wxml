@@ -14,15 +14,15 @@
   </view>
 </view>
 
-<scroll-view class="container">
+<view class="container">
   <block wx:for="{{blogList}}" wx:key="_id">
     <view class="blog-panel">
       <j-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="gotoDetail" />
       <j-blog-ctrl blogId="{{item._id}}" blog="{{item}}"></j-blog-ctrl>
     </view>
   </block>
-</scroll-view>
+</view>
 
-  <j-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
-    bind:loginfail="onLoginFail">
-  </j-login>
+<j-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
+  bind:loginfail="onLoginFail">
+</j-login>

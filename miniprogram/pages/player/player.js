@@ -3,6 +3,7 @@ let musiclist = []
 // 当前播放歌曲
 let playingIndex = 0
 const BackgroundAudioManager = wx.getBackgroundAudioManager()
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -36,6 +37,40 @@ Page({
     this.setData({
       isLyricShow: !this.data.isLyricShow
     })
+  },
+
+  // 保存播放历史
+  savePH(){
+    // 当前歌曲
+    const music = musiclist[playingIndex]
+    console.log(music)
+    const openid = app.globalData.openid
+    // 根据openid获取本地存储（同步）
+    const history = wx.getStorageSync(openid)
+    console.log(history)
+    // 本地是否保存过这首歌
+    let bHave = false
+    // 遍历本地存储，查重
+    for (let i = 0, len = history.length; i < len; i++) {
+      // 若存在，结束循环
+      if (history[i].id == music.id){
+        console.log('重复')
+        bHave = true
+        break
+      }
+    }
+      if(!bHave) {
+        // 将记录加入数组头部
+        history.unshift(music)
+        console.log('history')
+        // 更新本都存储（异步）
+        wx.setStorage({
+          data: history,
+          key: openid,
+        })
+      
+    }
+
   },
 
   _setMusicInfo(musicId){
@@ -117,6 +152,10 @@ Page({
       // setTimeout(function(){
       //   that._showTime()
       // },500)
+
+      // 保存播放记录
+      this.savePH()
+
       wx.hideLoading()
       wx.cloud.callFunction({
         name: 'music',

@@ -1,0 +1,7 @@
+<!--pages/play-history/play-history.wxml-->
+<j-nav-bar>
+  <text slot="left" bind:tap="goBack" class="iconfont icon-fanhui"></text>
+  <view slot="title">最近播放
+  </view>
+</j-nav-bar>
+<j-song musiclist="{{musiclist}}"></j-song>

@@ -12,8 +12,12 @@ App({
         traceUser: true,
       })
     }
+
+    this.getOpenid()
+
     this.globalData = {
       sysInfo: this.getSysInfo(),
+      openid: -1,
     }
   },
 
@@ -28,6 +32,18 @@ App({
       rect
     }
     return sysInfo
+  },
+
+  getOpenid(){
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then((res) => {
+      const openid = res.result.openid
+      this.globalData.openid = openid
+      if (wx.getStorageSync(openid) == '') {
+        wx.setStorageSync(openid, [])
+      }
+    })
   },
 
 

@@ -1,8 +1,4 @@
 /* components/blog-card/blog-card.wxss */
-page {
-  background-color: #f8f8f8;
-}
-
 .blog {
   padding: 20rpx;
   background-color: #fff;

@@ -1,21 +1,9 @@
 <!--pages/profile/profile.wxml-->
 <j-nav-bar>
-  <view slot="title" style="opacity:{{ 1 - op }};">
+  <view slot="title">
     个人中心页面
   </view>
-  <view slot="title" class="nav-title" style="opacity:{{op}};">
-    {{nickname}}
-  </view>
 </j-nav-bar>
-<!-- 上传图片 -->
-<!-- <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view> -->
 
 <view wx:if="{{ backgroundUrl }}" class="detail-container"
   style='background: url({{ backgroundUrl }}) no-repeat top/cover'>
@@ -23,7 +11,7 @@
 <!-- 遮罩层-->
 <view class="detail-mask"></view>
 
-<view class="container" wx:if="{{ !isOnline }}">
+<!-- <view class="container" wx:if="{{ !isOnline }}">
   <image src="../../images/default.png" class="avatar" bind:tap="login"></image>
   <view style="margin-top:15rpx; font-size:36rpx; letter-spacing:8rpx" bind:tap="login">
     点击登录
@@ -35,10 +23,33 @@
   <view style="margin-top:20rpx; font-size:36rpx;">
     {{ nickname }}
   </view>
+</view> -->
+
+<view class="header">
+  <view class="avatar">
+    <!-- 使用open-data获取头像和昵称 -->
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="nickname"></open-data>
 </view>
 
-<view class="playlist-container">
-  <block wx:for="{{ playlist }}" wx:key="id">
-    <j-playlist playlist="{{ item }}"></j-playlist>
-  </block>
+<view class="nav">
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/play-history/play-history">
+      <text class="text">最近播放</text>
+      <icon class="iconfont icon-arrow-right"></icon>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/profile-blog/profile-blog">
+      <text class="text">我的博客</text>
+      <icon class="iconfont icon-arrow-right"></icon>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" bind:tap="onTapQrCode">
+      <text class="text">小程序码</text>
+      <icon class="iconfont icon-arrow-right"></icon>
+    </navigator>
+  </view>
 </view>

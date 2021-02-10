@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "j-nav-bar":"/components/navBar/navBar",
+    "j-song":"/components/song/song"
+  }
+}

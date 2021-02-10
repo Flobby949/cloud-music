@@ -82,9 +82,6 @@ Component({
         title: '评论中',
         mask: true
       })
-      console.log('id')
-      console.log(this.properties)
-      console.log('id')
       db.collection('blog-comment').add({
         data: {
           content,
