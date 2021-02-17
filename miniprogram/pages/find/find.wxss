@@ -1,21 +1,15 @@
 /* pages/find/find.wxss */
 page {
-  background-color: #a8f1ff;
   padding-top: 185rpx;
 }
 
 .my-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .header {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-left: 20rpx;
   margin-bottom: 20rpx;
@@ -31,6 +25,5 @@ page {
 
 .blog-panel {
   margin-bottom: 20rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }

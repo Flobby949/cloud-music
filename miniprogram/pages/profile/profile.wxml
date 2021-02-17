@@ -5,11 +5,11 @@
   </view>
 </j-nav-bar>
 
-<view wx:if="{{ backgroundUrl }}" class="detail-container"
+<!-- <view wx:if="{{ backgroundUrl }}" class="detail-container"
   style='background: url({{ backgroundUrl }}) no-repeat top/cover'>
-</view>
+</view> -->
 <!-- 遮罩层-->
-<view class="detail-mask"></view>
+<!-- <view class="detail-mask"></view> -->
 
 <!-- <view class="container" wx:if="{{ !isOnline }}">
   <image src="../../images/default.png" class="avatar" bind:tap="login"></image>

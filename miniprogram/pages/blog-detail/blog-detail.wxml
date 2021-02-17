@@ -4,7 +4,7 @@
   <view slot="title">详情</view>
 </j-nav-bar>
 
-<scroll-view>
+<scroll-view style="padding-top:{{statusBarHeight + 44}}px;">
   <view class="card">
     <j-blog-card blog="{{blog}}"></j-blog-card>
   </view>
